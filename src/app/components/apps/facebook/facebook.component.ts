@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'facebook',
+  selector: 'app-facebook',
   templateUrl: './facebook.component.html',
   styleUrls: ['./facebook.component.css']
 })
-export class FacebookLogoComponent implements OnInit {
+export class FacebookComponent implements OnInit {
 
   constructor() { }
 
