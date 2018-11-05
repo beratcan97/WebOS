@@ -11,5 +11,4 @@ export class FacebookLogoComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
