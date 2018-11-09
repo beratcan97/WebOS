@@ -27,14 +27,10 @@ const appRoutes: Routes = [
     AppsNavbarComponent,
   ],
 
-
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      {
-        enableTracing: true,  // <-- debugging purposes only
-        useHash: true
-      }
+      { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule
   ],
