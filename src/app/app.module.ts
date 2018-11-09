@@ -13,7 +13,7 @@ import { AppsNavbarComponent } from './components/apps/apps-navbar/apps-navbar.c
 
 const appRoutes: Routes = [
   { path: '', component: HomeScreenComponent },
-  //{ path: 'apps/facebook', component: FacebookComponent }
+  { path: 'apps/facebook', component: FacebookComponent }
 ];
 
 @NgModule({
