@@ -11,9 +11,14 @@ import { AppsLogosComponent } from './components/home-screen/apps-logos/apps-log
 import { DnLogoComponent } from './components/home-screen/apps-logos/dn-logo/dn-logo.component';
 
 //APPS
+import { DnComponent } from './components/apps-launcher/apps/dn/dn.component';
+import { AppsLauncherComponent } from './components/apps-launcher/apps-launcher.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeScreenComponent }
+  { path: '', component: HomeScreenComponent },
+
+  //APPS
+  { path: 'news', component: DnComponent }
 ];
 
 @NgModule({
@@ -27,6 +32,10 @@ const appRoutes: Routes = [
     DnLogoComponent,
 
     // APPS
+    DnComponent,
+
+    AppsLauncherComponent,
+
   ],
 
   imports: [
