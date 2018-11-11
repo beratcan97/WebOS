@@ -14,7 +14,7 @@ import { FacebookComponent } from './components/apps/facebook/facebook.component
 import { AppsNavbarComponent } from './components/apps/apps-navbar/apps-navbar.component';
 */
 const appRoutes: Routes = [
-  { path: 'hello', component: HomeScreenComponent }
+  { path: '', component: HomeScreenComponent }
   //{ path: 'apps/facebook', component: FacebookComponent }
 ];
 
