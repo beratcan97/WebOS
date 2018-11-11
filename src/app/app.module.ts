@@ -8,17 +8,17 @@ import { DockComponent } from './components/home-screen/dock/dock.component';
 import { AppsLogosComponent } from './components/home-screen/apps-logos/apps-logos.component';
 
 // LOGOS
-import { DnLogoComponent } from './components/home-screen/apps-logos/dn-logo/dn-logo.component';
+import { NewsLogoComponent } from './components/home-screen/apps-logos/news-logo/news-logo.component';
 
 //APPS
-import { DnComponent } from './components/apps-launcher/apps/dn/dn.component';
+import { NewsComponent } from './components/apps-launcher/apps/news/news.component';
 import { AppsLauncherComponent } from './components/apps-launcher/apps-launcher.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeScreenComponent },
 
   //APPS
-  { path: 'news', component: DnComponent }
+  { path: 'news', component: NewsComponent }
 ];
 
 @NgModule({
@@ -29,10 +29,10 @@ const appRoutes: Routes = [
     AppsLogosComponent,
 
     // LOGOS
-    DnLogoComponent,
+    NewsLogoComponent,
 
     // APPS
-    DnComponent,
+    NewsComponent,
 
     AppsLauncherComponent,
 
