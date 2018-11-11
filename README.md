@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 > import logo for "news"
 
-> Bootstrap grids
+> Bootstrap grids on homescreen
 
 ## Development server
 
