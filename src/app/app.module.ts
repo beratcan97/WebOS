@@ -6,10 +6,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { HomeScreenComponent } from './components/home-screen/home-screen.component';
-/*
 import { DockComponent } from './components/home-screen/dock/dock.component';
 import { AppsLogosComponent } from './components/home-screen/apps-logos/apps-logos.component';
-import { FacebookLogoComponent } from './components/home-screen/apps-logos/facebook/facebook.component';
+/*
+
 import { FacebookComponent } from './components/apps/facebook/facebook.component';
 import { AppsNavbarComponent } from './components/apps/apps-navbar/apps-navbar.component';
 */
@@ -22,17 +22,20 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeScreenComponent,
-    /*
     DockComponent,
     AppsLogosComponent,
-    FacebookLogoComponent,
+
+    // LOGOS
+
+    // APPS
+    /*
+
     FacebookComponent,
     AppsNavbarComponent,*/
   ],
 
   imports: [
     RouterModule.forRoot(appRoutes, { useHash: true }),
-
     //{ enableTracing: true } // <-- debugging purposes only
     BrowserModule
   ],
