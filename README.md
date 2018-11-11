@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## TODO
 > Import fonts
+
 > fix the routing or find alternative
+
 > import logo for "news"
 
 ## Development server
