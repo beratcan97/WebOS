@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
+  lang = window.navigator.language;
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }

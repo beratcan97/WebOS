@@ -1,2 +1,10 @@
 <app-apps-launcher></app-apps-launcher>
-<iframe src="" class="iframeAppLauncher"></iframe>
+<ng-container *ngIf="lang == 'sv-SE'">
+    <iframe src="https://www.aftonbladet.se/" class="iframeAppLauncher"></iframe>
+</ng-container>
+<ng-container *ngIf="lang == 'tr-TR'">
+    <iframe src="https://www.sabah.com.tr/" class="iframeAppLauncher"></iframe>
+</ng-container>
+<ng-container *ngIf="lang == 'eng-ENG'">
+    <iframe src="https://www.nytimes.com/" class="iframeAppLauncher"></iframe>
+</ng-container>
