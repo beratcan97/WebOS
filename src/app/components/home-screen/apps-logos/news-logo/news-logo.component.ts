@@ -13,7 +13,7 @@ export class NewsLogoComponent implements OnInit {
   ngOnInit() {
   }
 
-  navigate() {
+  navigate(): void {
     this.router.navigate(['/news']);
   }
 }
