@@ -9,8 +9,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 > import logo for "news"
 
-> Bootstrap grids on homescreen
-
 > detect view orientation
 
 ## Development server
