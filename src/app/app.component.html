@@ -1,7 +1,8 @@
-<ng-container *ngIf="isLoaded; else loadingScreen">
-    <router-outlet></router-outlet>
+<ng-container *ngIf="isInstalled">
+    <ng-container *ngIf="isLoaded; else loadingScreen">
+        <router-outlet></router-outlet>
+    </ng-container>
+    <ng-template #loadingScreen>
+        <img src="assets/images/bootScreen.gif" alt="news icon" width="100%" height="100%">
+    </ng-template>
 </ng-container>
-<ng-template #loadingScreen>
-    <img src="assets/images/bootScreen.gif" alt="news icon" width="100%" height="100%">
-</ng-template>
-<!-- Routed components go here -->
