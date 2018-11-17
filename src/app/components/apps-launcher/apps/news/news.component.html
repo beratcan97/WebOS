@@ -1,13 +1,10 @@
 <app-apps-launcher></app-apps-launcher>
 
 <ng-container *ngIf="lang == 'sv-SE';else second">
-    <iframe src="https://www.aftonbladet.se/" class="iframeAppLauncher"></iframe>
 </ng-container>
 <ng-template #second>
     <ng-container *ngIf="lang == 'tr-TR';else third">
-        <iframe src="https://www.sabah.com.tr/" class="iframeAppLauncher"></iframe>
     </ng-container>
 </ng-template>
 <ng-template #third>
-    <iframe src="https://news.sky.com/world" class="iframeAppLauncher"></iframe>
 </ng-template>

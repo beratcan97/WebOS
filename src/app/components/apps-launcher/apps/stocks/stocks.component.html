@@ -1,13 +1,10 @@
 <app-apps-launcher></app-apps-launcher>
 
 <ng-container *ngIf="lang == 'sv-SE';else second">
-  <iframe src="https://www.di.se/bors/" class="iframeAppLauncher"></iframe>
 </ng-container>
 <ng-template #second>
   <ng-container *ngIf="lang == 'tr-TR';else third">
-    <iframe src="https://www.bloomberght.com/borsa" class="iframeAppLauncher"></iframe>
   </ng-container>
 </ng-template>
 <ng-template #third>
-  <iframe src="https://www.cnbc.com/stocks/" class="iframeAppLauncher"></iframe>
 </ng-template>

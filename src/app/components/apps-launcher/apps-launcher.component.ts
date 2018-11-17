@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-apps-launcher',
@@ -8,12 +9,14 @@ import { Location } from '@angular/common';
 })
 export class AppsLauncherComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  constructor(private location: Location,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
-  navBack() {
-    this.location.back();
+  navHome() {
+    //this.location.back();
+    this.router.navigate(['']);
   }
 }
