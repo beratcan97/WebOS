@@ -9,7 +9,6 @@ body {
     border-radius: 1rem;
 }
 
-.appContainer {
+.fullScreen {
     height: 100vh;
-    width: 100vh;
 }
