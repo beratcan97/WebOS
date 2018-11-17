@@ -1,0 +1,19 @@
+<app-apps-launcher></app-apps-launcher>
+
+<div class="appContainer d-flex flex-column justify-content-center align-items-center">
+  <button class="btn btn-primary" (click)="count()">{{counter}}</button>
+
+  <button class="btn btn-danger" (click)="resetCounter()">
+    <ng-container *ngIf="lang == 'sv-SE';else second">
+      Nollställ
+    </ng-container>
+    <ng-template #second>
+      <ng-container *ngIf="lang == 'tr-TR';else third">
+        Sıfırla
+      </ng-container>
+    </ng-template>
+    <ng-template #third>
+      Reset
+    </ng-template>
+  </button>
+</div>

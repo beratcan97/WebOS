@@ -9,8 +9,7 @@ body {
     border-radius: 1rem;
 }
 
-.iframeAppLauncher {
+.appContainer {
     height: 100vh;
     width: 100vh;
-    border: none;
 }
