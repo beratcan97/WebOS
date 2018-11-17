@@ -12,3 +12,8 @@ body {
 .fullScreen {
     height: 100vh;
 }
+
+.btn {
+    /*  Disables double tap to zoom    */
+    touch-action: manipulation;
+}
