@@ -5,11 +5,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## TODO
 > Import fonts
 
-> fix the lang variable to a service
+> Fix the lang variable to a service
 
-> import logo for "news"
+> Import logo for "news"
 
-> detect view orientation
+> Detect view orientation
+
+> Detect if pwa is installed or not
+
+> Weather gives error in console
 
 ## Development server
 

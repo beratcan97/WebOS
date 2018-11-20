@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { HomeScreenComponent } from './components/home-screen/home-screen.component';
 import { DockComponent } from './components/home-screen/dock/dock.component';
@@ -59,7 +62,9 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes, { useHash: true }),
     //{ enableTracing: true } // <-- debugging purposes only
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
