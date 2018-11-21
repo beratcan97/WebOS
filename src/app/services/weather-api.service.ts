@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class WeatherAPIService {
 
+  public readonly weatherDATA$: Observable<any> = this.getWeather();
+
   constructor(private http: HttpClient) { }
 
   getWeather(): Observable<any> {
