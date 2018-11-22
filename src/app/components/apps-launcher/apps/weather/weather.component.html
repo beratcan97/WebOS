@@ -2,7 +2,7 @@
 
 <ng-container *ngIf="weatherData">
     <div class="d-flex flex-column align-items-center">
-        <img src="http://openweathermap.org/img/w/{{weatherData.list[0].weather[0].icon}}.png" alt="current day weater icon"
+        <img src="https://openweathermap.org/img/w/{{weatherData.list[0].weather[0].icon}}.png" alt="current day weater icon"
             height="100px" width="100px">
         <h1>{{weatherData.city.name}}</h1>
         <p>Current temperature: {{weatherData.list[0].main.temp}}</p>

@@ -13,6 +13,6 @@ export class WeatherAPIService {
   constructor(private http: HttpClient) { }
 
   getWeather(): Observable<any> {
-    return this.http.get('http://api.openweathermap.org/data/2.5/forecast?q=Stockholm,se&units=metric&APPID=902e20f143484cc21bdab9d80c5ef9cd');
+    return this.http.get('https://api.openweathermap.org/data/2.5/forecast?q=Stockholm,se&units=metric&APPID=902e20f143484cc21bdab9d80c5ef9cd');
   }
 }
