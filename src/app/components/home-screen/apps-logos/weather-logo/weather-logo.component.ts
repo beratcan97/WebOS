@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { WeatherAPIService } from '../../../../services/weather-api.service';
 
 @Component({
   selector: 'app-weather-logo',
@@ -8,9 +9,17 @@ import { Router } from '@angular/router';
 })
 export class WeatherLogoComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  weatherData;
+
+  constructor(private router: Router,
+    private weatherAPIService: WeatherAPIService) { }
 
   ngOnInit() {
+    this.weatherAPIService.weatherDATA$
+      .subscribe(
+        DATA => this.weatherData = DATA,
+        error => console.log(error),
+      );
   }
 
   navigate(): void {

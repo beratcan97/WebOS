@@ -1,5 +1,14 @@
 <div (click)="navigate()" class="app">
-  <img src="assets/images/apps-logos/weather.gif" alt="news icon" class="app">
+
+  <ng-container *ngIf="weatherData">
+    <img src="https://openweathermap.org/img/w/{{weatherData.list[0].weather[0].icon}}.png" alt="{{weatherData.list[0].weather[0].description}}"
+      class="app">
+  </ng-container>
+
+  <ng-container *ngIf="!weatherData">
+    <img src="assets/images/apps-logos/weather.gif" alt="weather icon" class="app">
+  </ng-container>
+
   <div class="d-flex justify-content-center">
     <p>Weather</p>
   </div>

@@ -18,10 +18,7 @@ export class AppComponent {
       this.isLoaded = true;
     });
 
-    this.weatherAPIService.getWeather()
-      .subscribe(
-        error => console.log(error),
-      );
+    this.weatherAPIService.getWeather().subscribe();
   }
 
   async delay(ms: number) {

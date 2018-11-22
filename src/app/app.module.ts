@@ -17,6 +17,7 @@ import { StocksLogoComponent } from './components/home-screen/apps-logos/stocks-
 import { SettingsLogoComponent } from './components/home-screen/apps-logos/settings-logo/settings-logo.component';
 import { WeatherLogoComponent } from './components/home-screen/apps-logos/weather-logo/weather-logo.component';
 import { CounterLogoComponent } from './components/home-screen/apps-logos/counter-logo/counter-logo.component';
+import { ClockLogoComponent } from './components/home-screen/apps-logos/clock-logo/clock-logo.component';
 
 //APPS
 import { NewsComponent } from './components/apps-launcher/apps/news/news.component';
@@ -24,6 +25,7 @@ import { StocksComponent } from './components/apps-launcher/apps/stocks/stocks.c
 import { SettingsComponent } from './components/apps-launcher/apps/settings/settings.component';
 import { WeatherComponent } from './components/apps-launcher/apps/weather/weather.component';
 import { CounterComponent } from './components/apps-launcher/apps/counter/counter.component';
+import { ClockComponent } from './components/apps-launcher/apps/clock/clock.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeScreenComponent },
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'weather', component: WeatherComponent },
   { path: 'counter', component: CounterComponent },
+  { path: 'clock', component: ClockComponent },
 ];
 
 @NgModule({
@@ -57,6 +60,8 @@ const appRoutes: Routes = [
     SettingsComponent,
     WeatherComponent,
     CounterComponent,
+    ClockLogoComponent,
+    ClockComponent,
   ],
 
   imports: [

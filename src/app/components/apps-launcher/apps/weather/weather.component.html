@@ -2,10 +2,10 @@
 
 <ng-container *ngIf="weatherData">
     <div class="d-flex flex-column align-items-center">
-        <img src="https://openweathermap.org/img/w/{{weatherData.list[0].weather[0].icon}}.png" alt="current day weater icon"
+        <img src="https://openweathermap.org/img/w/{{weatherData.list[0].weather[0].icon}}.png" alt="{{weatherData.list[0].weather[0].description}}"
             height="100px" width="100px">
         <h1>{{weatherData.city.name}}</h1>
-        <p>Current temperature: {{weatherData.list[0].main.temp}}</p>
+        <p>Current temperature: {{weatherData.list[0].main.temp}} °C</p>
         <p>Current day: {{weatherData.list[0].dt_txt}}</p>
     </div>
 </ng-container>

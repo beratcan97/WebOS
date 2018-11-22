@@ -9,7 +9,6 @@ import { WeatherAPIService } from '../../../../services/weather-api.service';
 export class WeatherComponent implements OnInit {
 
   weatherData;
-  isWeatherDataLoaded: boolean = false;
 
   constructor(private weatherAPIService: WeatherAPIService) { }
 
