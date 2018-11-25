@@ -10,6 +10,8 @@ export class ClockLogoComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  lang = window.navigator.language;
+
   ngOnInit() {
   }
 

@@ -10,6 +10,23 @@
   </ng-container>
 
   <div class="d-flex justify-content-center">
+
+    <p>
+      <ng-container *ngIf="lang == 'sv-SE';else second">
+        Väder
+      </ng-container>
+      <ng-template #second>
+        <ng-container *ngIf="lang == 'tr-TR';else third">
+          Hava durumu
+        </ng-container>
+      </ng-template>
+      <ng-template #third>
+        Weather
+      </ng-template>
+    </p>
+
+
+
     <p>Weather</p>
   </div>
 </div>

@@ -10,6 +10,8 @@ export class CounterLogoComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  lang = window.navigator.language;
+
   ngOnInit() {
   }
 

@@ -1,6 +1,19 @@
 <div (click)="navigate()">
   <img src="assets/images/apps-logos/counter.gif" alt="news icon" class="app">
   <div class="d-flex justify-content-center">
-    <p>Counter</p>
+
+    <p>
+      <ng-container *ngIf="lang == 'sv-SE';else second">
+        Räknare
+      </ng-container>
+      <ng-template #second>
+        <ng-container *ngIf="lang == 'tr-TR';else third">
+          Sayaç
+        </ng-container>
+      </ng-template>
+      <ng-template #third>
+        Counter
+      </ng-template>
+    </p>
   </div>
 </div>

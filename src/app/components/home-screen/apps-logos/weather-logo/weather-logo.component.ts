@@ -9,6 +9,8 @@ import { WeatherAPIService } from '../../../../services/weather-api.service';
 })
 export class WeatherLogoComponent implements OnInit {
 
+  lang = window.navigator.language;
+
   weatherData;
 
   constructor(private router: Router,

@@ -1,6 +1,19 @@
 <div (click)="navigate()">
   <img src="assets/images/apps-logos/stocks.png" alt="news icon" class="app">
   <div class="d-flex justify-content-center">
-    <p>Stocks</p>
+
+    <p>
+      <ng-container *ngIf="lang == 'sv-SE';else second">
+        Aktier
+      </ng-container>
+      <ng-template #second>
+        <ng-container *ngIf="lang == 'tr-TR';else third">
+          Borsa
+        </ng-container>
+      </ng-template>
+      <ng-template #third>
+        Stocks
+      </ng-template>
+    </p>
   </div>
 </div>

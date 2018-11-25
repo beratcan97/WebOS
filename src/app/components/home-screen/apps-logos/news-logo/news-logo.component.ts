@@ -10,6 +10,8 @@ export class NewsLogoComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  lang = window.navigator.language;
+
   ngOnInit() {
   }
 
