@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## TODO
 > Detect if pwa is installed or not
 
-> 
+> bootstrap cards
 
 ## Development server
 
