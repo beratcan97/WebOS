@@ -3,17 +3,9 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
 
 ## TODO
-> Import fonts
-
-> Fix the lang variable to a service
-
-> Import logo for "news"
-
-> Detect view orientation
-
 > Detect if pwa is installed or not
 
-> Weather gives error in console
+> 
 
 ## Development server
 
