@@ -1,10 +1,36 @@
 <app-apps-launcher></app-apps-launcher>
 
-<ng-container *ngIf="lang == 'sv-SE';else second">
-</ng-container>
-<ng-template #second>
-    <ng-container *ngIf="lang == 'tr-TR';else third">
+<div class="mx-3">
+    <ng-container *ngIf="lang == 'sv-SE';else second">
+        <div *ngIf="isEngNewsDATALoaded">
+            <ng-container *ngFor="let articles of engNewsDATA.articles">
+                <div class="d-flex flex-column">
+                    <h5>{{articles.title}}</h5>
+                    <p>{{articles.description}}</p>
+                </div>
+            </ng-container>
+        </div>
     </ng-container>
-</ng-template>
-<ng-template #third>
-</ng-template>
+    <ng-template #second>
+        <ng-container *ngIf="lang == 'tr-TR';else third">
+            <div *ngIf="isEngNewsDATALoaded">
+                <ng-container *ngFor="let articles of engNewsDATA.articles">
+                    <div class="d-flex flex-column">
+                        <h5>{{articles.title}}</h5>
+                        <p>{{articles.description}}</p>
+                    </div>
+                </ng-container>
+            </div>
+        </ng-container>
+    </ng-template>
+    <ng-template #third>
+        <div *ngIf="isEngNewsDATALoaded">
+            <ng-container *ngFor="let articles of engNewsDATA.articles">
+                <div class="d-flex flex-column">
+                    <h5>{{articles.title}}</h5>
+                    <p>{{articles.description}}</p>
+                </div>
+            </ng-container>
+        </div>
+    </ng-template>
+</div>
