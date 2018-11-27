@@ -12,4 +12,9 @@ export class HomeScreenComponent implements OnInit {
   ngOnInit() {
   }
 
+  //Block rubber banding
+  BlockElasticScroll(event) {
+    event.preventDefault();
+  }
+
 }
