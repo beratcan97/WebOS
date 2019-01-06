@@ -18,6 +18,7 @@ import { SettingsLogoComponent } from './components/home-screen/apps-logos/setti
 import { WeatherLogoComponent } from './components/home-screen/apps-logos/weather-logo/weather-logo.component';
 import { CounterLogoComponent } from './components/home-screen/apps-logos/counter-logo/counter-logo.component';
 import { ClockLogoComponent } from './components/home-screen/apps-logos/clock-logo/clock-logo.component';
+import { TVLogoComponent } from './components/home-screen/apps-logos/tv-logo/tv-logo.component';
 
 //APPS
 import { NewsComponent } from './components/apps-launcher/apps/news/news.component';
@@ -26,6 +27,7 @@ import { SettingsComponent } from './components/apps-launcher/apps/settings/sett
 import { WeatherComponent } from './components/apps-launcher/apps/weather/weather.component';
 import { CounterComponent } from './components/apps-launcher/apps/counter/counter.component';
 import { ClockComponent } from './components/apps-launcher/apps/clock/clock.component';
+import { TVComponent } from './components/apps-launcher/apps/tv/tv.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeScreenComponent },
@@ -37,6 +39,7 @@ const appRoutes: Routes = [
   { path: 'weather', component: WeatherComponent },
   { path: 'counter', component: CounterComponent },
   { path: 'clock', component: ClockComponent },
+  { path: 'tv', component: TVComponent },
 ];
 
 @NgModule({
@@ -53,6 +56,7 @@ const appRoutes: Routes = [
     SettingsLogoComponent,
     WeatherLogoComponent,
     CounterLogoComponent,
+    TVLogoComponent,
 
     // APPS
     NewsComponent,
@@ -62,6 +66,7 @@ const appRoutes: Routes = [
     CounterComponent,
     ClockLogoComponent,
     ClockComponent,
+    TVComponent,
   ],
 
   imports: [
