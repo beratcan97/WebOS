@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TVComponent implements OnInit {
 
+  width = '100%';
+  collapsed: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  setWidth() {
+    if (this.collapsed) {
+      this.width = '100%';
+      this.collapsed = false;
+    }
+    else {
+      this.width = '110%';
+      this.collapsed = true;
+    }
+  }
 }

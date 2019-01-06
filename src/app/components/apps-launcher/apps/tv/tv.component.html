@@ -1,1 +1,6 @@
-<iframe src="https://www.ecanlitvizle.live/tv.php" frameborder="0" scrolling="no" width="100%" height="900px"></iframe>
+<app-apps-launcher></app-apps-launcher>
+<div class="menuButton">
+  <img src="assets/images/apps/tv/menu.gif" alt="Menu icon" class="app" (click)="setWidth()">
+</div>
+
+<iframe src="https://www.ecanlitvizle.live/tv.php" frameborder="0" scrolling="no" width={{width}} height="900px"></iframe>
