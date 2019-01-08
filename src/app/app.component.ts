@@ -19,6 +19,18 @@ export class AppComponent {
     });
 
     this.weatherAPIService.getWeather().subscribe();
+
+    //localStorage
+    localStorage.setItem('device', this.getDevice());
+  }
+
+  getDevice() {
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      return 'Phone';
+    }
+    else {
+      return 'Desktop';
+    }
   }
 
   async delay(ms: number) {
