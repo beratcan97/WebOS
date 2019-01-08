@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeScreenComponent implements OnInit {
 
+  device: string = "";
+
   constructor() { }
 
   ngOnInit() {
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      this.device = "phone";
+    }
+    else {
+      this.device = "desktop";
+    }
   }
 
   //Block rubber banding
