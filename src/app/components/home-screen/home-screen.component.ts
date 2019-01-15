@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeScreenComponent implements OnInit {
 
+  currentColor = localStorage.getItem('wallpaper');
+
   constructor() { }
 
   ngOnInit() {
