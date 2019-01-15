@@ -1,4 +1,10 @@
-<ng-container *ngIf="currentColor == 'blueviolet'">
+<div class="homeScreenContainer d-flex flex-column justify-content-between" style="background-color: lightslategrey;"
+    ontouchmove="BlockElasticScroll(event)">
+    <apps-logos></apps-logos>
+    <app-dock></app-dock>
+</div>
+
+<!--<ng-container *ngIf="currentColor == 'blueviolet'">
     <div class="homeScreenContainer d-flex flex-column justify-content-between" style="background-color: blueviolet;"
         ontouchmove="BlockElasticScroll(event)">
         <apps-logos></apps-logos>
@@ -46,4 +52,4 @@
         <apps-logos></apps-logos>
         <app-dock></app-dock>
     </div>
-</ng-container>
+</ng-container>-->
