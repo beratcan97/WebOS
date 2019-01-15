@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  lang = window.navigator.language;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  navigate(route): void {
+    this.router.navigate([route]);
+  }
 }

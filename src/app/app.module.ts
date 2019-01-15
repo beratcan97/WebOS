@@ -29,6 +29,10 @@ import { CounterComponent } from './components/apps-launcher/apps/counter/counte
 import { ClockComponent } from './components/apps-launcher/apps/clock/clock.component';
 import { TVComponent } from './components/apps-launcher/apps/tv/tv.component';
 
+//Settings
+import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
+
+
 const appRoutes: Routes = [
   { path: '', component: HomeScreenComponent },
 
@@ -40,6 +44,9 @@ const appRoutes: Routes = [
   { path: 'counter', component: CounterComponent },
   { path: 'clock', component: ClockComponent },
   { path: 'tv', component: TVComponent },
+
+  //Settings
+  { path: 'wallpaper', component: WallpaperComponent },
 ];
 
 @NgModule({
@@ -67,6 +74,9 @@ const appRoutes: Routes = [
     ClockLogoComponent,
     ClockComponent,
     TVComponent,
+
+    //Settings
+    WallpaperComponent,
   ],
 
   imports: [

@@ -21,7 +21,16 @@ export class AppComponent {
     this.weatherAPIService.getWeather().subscribe();
 
     //localStorage
-    localStorage.setItem('device', this.getDevice());
+    if (localStorage.length > 0) {
+      //Current user
+    } else {
+      //New user
+
+      //device
+      localStorage.setItem('device', this.getDevice());
+      //wallpaper
+      localStorage.setItem('wallpaper', 'lightblue');
+    }
   }
 
   getDevice() {

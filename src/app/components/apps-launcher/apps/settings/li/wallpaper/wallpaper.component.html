@@ -1,0 +1,10 @@
+<app-apps-launcher></app-apps-launcher>
+
+<div class="homeScreenContainer d-flex flex-column justify-content-between">
+  <div>
+    <p>Current color: {{currentColor}}</p>
+    <ng-container *ngFor="let color of colors">
+      <div class="li mt-3" (click)="localStorage(color)">{{color}}</div>
+    </ng-container>
+  </div>
+</div>
