@@ -1,0 +1,17 @@
+<div (click)="navigate()">
+  <img src="assets/images/apps-logos/calculator.gif" alt="calculator icon" class="app">
+
+  <p>
+    <ng-container *ngIf="lang == 'sv-SE';else second">
+      kalkylator
+    </ng-container>
+    <ng-template #second>
+      <ng-container *ngIf="lang == 'tr-TR';else third">
+        Hesap makinesi
+      </ng-container>
+    </ng-template>
+    <ng-template #third>
+      Calculator
+    </ng-template>
+  </p>
+</div>

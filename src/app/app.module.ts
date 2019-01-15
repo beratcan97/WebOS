@@ -19,6 +19,7 @@ import { WeatherLogoComponent } from './components/home-screen/apps-logos/weathe
 import { CounterLogoComponent } from './components/home-screen/apps-logos/counter-logo/counter-logo.component';
 import { ClockLogoComponent } from './components/home-screen/apps-logos/clock-logo/clock-logo.component';
 import { TVLogoComponent } from './components/home-screen/apps-logos/tv-logo/tv-logo.component';
+import { CalculatorLogoComponent } from './components/home-screen/apps-logos/calculator-logo/calculator-logo.component';
 
 //APPS
 import { NewsComponent } from './components/apps-launcher/apps/news/news.component';
@@ -28,6 +29,7 @@ import { WeatherComponent } from './components/apps-launcher/apps/weather/weathe
 import { CounterComponent } from './components/apps-launcher/apps/counter/counter.component';
 import { ClockComponent } from './components/apps-launcher/apps/clock/clock.component';
 import { TVComponent } from './components/apps-launcher/apps/tv/tv.component';
+import { CalculatorComponent } from './components/apps-launcher/apps/calculator/calculator.component';
 
 //Settings
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
@@ -44,6 +46,7 @@ const appRoutes: Routes = [
   { path: 'counter', component: CounterComponent },
   { path: 'clock', component: ClockComponent },
   { path: 'tv', component: TVComponent },
+  { path: 'calculator', component: CalculatorComponent },
 
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
@@ -64,6 +67,7 @@ const appRoutes: Routes = [
     WeatherLogoComponent,
     CounterLogoComponent,
     TVLogoComponent,
+    CalculatorLogoComponent,
 
     // APPS
     NewsComponent,
@@ -74,6 +78,7 @@ const appRoutes: Routes = [
     ClockLogoComponent,
     ClockComponent,
     TVComponent,
+    CalculatorComponent,
 
     //Settings
     WallpaperComponent,
