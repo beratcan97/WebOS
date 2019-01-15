@@ -1,21 +1,19 @@
-<ng-container *ngIf="device == 'Desktop'">
-  <div (click)="navigate()">
-    <img src="assets/images/apps-logos/tv.gif" alt="TV icon" class="app">
-    <div class="d-flex justify-content-center">
+<div (click)="navigate()">
+  <img src="assets/images/apps-logos/tv.gif" alt="TV icon" class="app">
+  <div class="d-flex justify-content-center">
 
-      <p>
-        <ng-container *ngIf="lang == 'sv-SE';else second">
+    <p>
+      <ng-container *ngIf="lang == 'sv-SE';else second">
+        TV
+      </ng-container>
+      <ng-template #second>
+        <ng-container *ngIf="lang == 'tr-TR';else third">
           TV
         </ng-container>
-        <ng-template #second>
-          <ng-container *ngIf="lang == 'tr-TR';else third">
-            TV
-          </ng-container>
-        </ng-template>
-        <ng-template #third>
-          TV
-        </ng-template>
-      </p>
-    </div>
+      </ng-template>
+      <ng-template #third>
+        TV
+      </ng-template>
+    </p>
   </div>
-</ng-container>
+</div>

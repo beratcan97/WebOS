@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppsLogosComponent implements OnInit {
 
+  device = localStorage.getItem('device');
+
   constructor() { }
 
   ngOnInit() {

@@ -11,7 +11,6 @@ export class TVLogoComponent implements OnInit {
   constructor(private router: Router) { }
 
   lang = window.navigator.language;
-  device = localStorage.getItem('device');
 
   ngOnInit() {
   }
