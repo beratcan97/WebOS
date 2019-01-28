@@ -8,9 +8,9 @@ describe('AppsLogosComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppsLogosComponent ]
+      declarations: [AppsLogosComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

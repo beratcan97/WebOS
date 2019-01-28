@@ -1,0 +1,38 @@
+<ng-container *ngIf="isLoaded; else loadingScreen">
+  <app-apps-launcher></app-apps-launcher>
+
+  <div class="fullScreen d-flex flex-column justify-content-center align-items-center">
+
+    <ng-container *ngIf="lang == 'sv-SE';else second">
+      {{cardNumber}}
+      <p>Kortet är inte giltigt just nu</p>
+    </ng-container>
+    <ng-template #second>
+      <ng-container *ngIf="lang == 'tr-TR';else third">
+        {{cardNumber}}
+        <p>Kart şimdilik geçerli değil</p>
+      </ng-container>
+    </ng-template>
+    <ng-template #third>
+      {{cardNumber}}
+      <p>The card is not valid for now</p>
+    </ng-template>
+  </div>
+</ng-container>
+
+<ng-template #loadingScreen>
+  <div class="homeScreenContainer d-flex flex-column justify-content-between">
+    <img src="assets/images/apps/cardGenerator/bootScreen.gif" alt="news icon" width="100%" height="100%">
+    <ng-container *ngIf="lang == 'sv-SE';else second">
+      <h1>Vänta medan ditt kort genereras...</h1>
+    </ng-container>
+    <ng-template #second>
+      <ng-container *ngIf="lang == 'tr-TR';else third">
+        <h1>Kartınız oluşturulurken bekleyin...</h1>
+      </ng-container>
+    </ng-template>
+    <ng-template #third>
+      <h1>wait while your card is being generated...</h1>
+    </ng-template>
+  </div>
+</ng-template>

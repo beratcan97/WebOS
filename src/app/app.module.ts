@@ -20,6 +20,7 @@ import { CounterLogoComponent } from './components/home-screen/apps-logos/counte
 import { ClockLogoComponent } from './components/home-screen/apps-logos/clock-logo/clock-logo.component';
 import { TVLogoComponent } from './components/home-screen/apps-logos/tv-logo/tv-logo.component';
 import { CalculatorLogoComponent } from './components/home-screen/apps-logos/calculator-logo/calculator-logo.component';
+import { CardGeneratorLogoComponent } from './components/home-screen/apps-logos/card-generator-logo/card-generator-logo.component';
 
 //APPS
 import { NewsComponent } from './components/apps-launcher/apps/news/news.component';
@@ -30,6 +31,7 @@ import { CounterComponent } from './components/apps-launcher/apps/counter/counte
 import { ClockComponent } from './components/apps-launcher/apps/clock/clock.component';
 import { TVComponent } from './components/apps-launcher/apps/tv/tv.component';
 import { CalculatorComponent } from './components/apps-launcher/apps/calculator/calculator.component';
+import { CardGeneratorComponent } from './components/apps-launcher/apps/card-generator/card-generator.component';
 
 //Settings
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
@@ -47,6 +49,7 @@ const appRoutes: Routes = [
   { path: 'clock', component: ClockComponent },
   { path: 'tv', component: TVComponent },
   { path: 'calculator', component: CalculatorComponent },
+  { path: 'cardGenerator', component: CardGeneratorComponent },
 
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
@@ -68,6 +71,7 @@ const appRoutes: Routes = [
     CounterLogoComponent,
     TVLogoComponent,
     CalculatorLogoComponent,
+    CardGeneratorLogoComponent,
 
     // APPS
     NewsComponent,
@@ -79,6 +83,7 @@ const appRoutes: Routes = [
     ClockComponent,
     TVComponent,
     CalculatorComponent,
+    CardGeneratorComponent,
 
     //Settings
     WallpaperComponent,
