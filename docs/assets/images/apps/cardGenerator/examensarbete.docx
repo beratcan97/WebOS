@@ -1,0 +1,184 @@
+2019-03-01
+Nackademin
+FEND17
+Examensarbete 40 poäng
+VT 2019
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Köp & Sälj bil
+
+Marknadsplats för begagnade bilar
+
+Författare: Beratcan Acil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sammanfattning
+
+I denna rapport beskriver jag det projekt jag gjort som Examensarbete. Projektet utfördes av mig på egenhand. 
+
+Huvudsakliga tekniker Angular, github, firestore firebase.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Innehållsförteckning
+
+Introduktion
+Inledning
+Bakgrund
+Syfte
+Metod
+Resultat
+Diskussion
+Källföreteckning
+Bilagor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introduktion
+
+Inledning
+Enligt SvD så handlar ca 89 procent av svenskarna på nätet. Vi handlar inte bara nytt utan även begagnade produkter. Det finns idag ett stort antal sidor som ger oss denna service dock så ser jag en brist på nischade sidor. 
+
+En artikel på SvD ger oss informationen att år 2017 har det sålts totalt 1 179 904 begagnade bilar i Sverige. Vilket är en enorm stor siffra. Idag använder de flesta bilhandlare sig av nätet när de ska hitta bilar och kunder. De flesta bilköp skär efter en viss tids letande efter den mesta relevanta bilen t.ex. färg på bilen eller vissa utrustningar. Vilket resulterar i att ett andra hands bilköp inte går så fort och ibland sträcker sig över veckor. Vi har även dessa som surfar på dessa sidor utan att göra ett köp. 
+
+Jag drar slutsatsen att andra hands webbsidor där fordon främst bilar säljs så är det en stor trafik som flödar varje dag. Trots den stora trafik till dessa sidor så ser jag brist på dessa få sidor som finns.
+
+Bakgrund
+I min utbildning på Nackademin så ingår det en kurs LIA som står för Lärande i arbete. Den kursen utförs på ett företag där relevanta arbetsuppgifter görs. Jag valda att göra min LIA på Polisen som frontend utvecklare. Polisen använder angular som ramverk för sina projekt.
+
+Jag tänker att använda mig av firebase som backend då jag tidigare har använt det och känner mig väldigt bekväm med verktyget. I backenden kommer all data lagras.
+
+I frontend har jag funderat ett tag innan jag gjorde ett val. Jag över vägde mellan React och Angular som ramverk vid byggandet av frontend. Efter ett lite sökande/ läsande kom jag fram till att Angular passar bättre för detta projekt då Angular främst används för stora projekt vilket jag anser mitt projekt att vara. Det jag gillar med Angular är att Angular följer med enhetstester(karma) och Route hantering. Enhets tester är bra att ha med. Jag har tänkt att jag börjar med testdriven utveckling.
+
+Angular är ett svårt ramverk att jobba med om man tidigare inte kan t.ex. typescript. Jag har däremot mycket väl erfarenhet av Angular och har tidigare gjort ett par projekt i Angular. Jag vet att jag inte kan allting om Angular i huvudet som tur så har Angular en väldigt bra dokumentation som jag tänker att använda mig utav.
+
+Då jag utvecklar projektet själv kommer jag inte att använda mig utav någon tjänst som trello och kommer istället att göra en todo list på projektets readme fil.
+
+Testdriven utveckling
+Det som menas med testdriven utveckling är att man börjar med att skriva en test vilket kan se ut som t.ex. ”X + Y should equal to 10”. Sedan kör man testen och ser att det failar. Steg nr 3 är att man skriver koden t.ex. ”X=4, Y=6”. Sedan kör man koden åter igen och ser om det går i genom utan fel. Om det går igenom fel fritt återvänder vi till koden och försöker skriva om koden på ett förbättrat sätt om det är möjligt annars är vi klara.
+
+Agila Metoder
+Jag valde att utveckla mitt projekt inom ramarna inom Scrum. 
+
+Resultat
+Projektet har under utvecklingstiden följt tidsplanen med vissa modifikationer. På grund utav att jag tidestimerade på ett korrekt sätt så har jag aldrig känt
+ tidspress under utvecklingen.
+
+Jag har fått fram en produkt som idag i princip skulle kunna användas i produktion med en del restitutioner.
+
+Diskussion
+Jag märkte under utvecklingen av projektet hur viktigt det är egentligen med att tidestimera och planera  projektet på ett mycket väl beskrivet sätt.
+
+Projektet använder Firebase Firestore som backend kommer det visa nackdelar. Firebase är inte det bästa lösningen för projekt där stora och väl strukturerade data ska hanteras. Firebase fungerar bra just nu men kommer troligt vis att sakta ner bl.a. sök funktionaliteten.
+
+Källförteckning
+https://www.svd.se/rekordmanga-handlar-pa-natet
+https://www.svd.se/forsaljningsrekord-for-begagnade-bilar
+https://angular.io/docs
