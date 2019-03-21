@@ -1,3 +1,26 @@
 .homeScreenContainer {
     height: 100vh;
 }
+
+
+.blueviolet {
+    background-color: blueviolet;
+}
+.lightslategrey {
+    background-color: lightslategrey;
+}
+.yellowgreen {
+    background-color: yellowgreen;
+}
+.lightskyblue {
+    background-color: lightskyblue;
+}
+.lightcoral {
+    background-color: lightcoral;
+}
+.lightpink {
+    background-color: lightpink;
+}
+.lightseagreen {
+    background-color: lightseagreen;
+}

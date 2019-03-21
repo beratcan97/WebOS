@@ -14,6 +14,14 @@ export class HomeScreenComponent implements OnInit {
   ngOnInit() {
   }
 
+  rightColorFinder(testColor): boolean {
+    if (this.currentColor === testColor) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   //Block rubber banding
   BlockElasticScroll(event) {
     event.preventDefault();

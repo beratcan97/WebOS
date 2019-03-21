@@ -1,58 +1,14 @@
-<div class="homeScreenContainer d-flex flex-column justify-content-between" style="background-color: lightslategrey;"
+<div [ngClass]="{
+    'blueviolet': rightColorFinder('blueviolet'),
+    'lightslategrey': rightColorFinder('lightslategrey'),
+    'yellowgreen': rightColorFinder('yellowgreen'),
+    'lightskyblue': rightColorFinder('lightskyblue'),
+    'lightcoral': rightColorFinder('lightcoral'),
+    'lightpink': rightColorFinder('lightpink'),
+    'lightseagreen': rightColorFinder('lightseagreen')
+    }" 
+    class="homeScreenContainer d-flex flex-column justify-content-between"
     ontouchmove="BlockElasticScroll(event)">
     <apps-logos></apps-logos>
     <app-dock></app-dock>
 </div>
-
-<p>{{currentColor}}</p>
-<ng-container *ngIf="currentColor == 'blueviolet'"> <p>blueeeeee</p> </ng-container>
-
-<!--<ng-container *ngIf="currentColor == 'blueviolet'">
-    <div class="homeScreenContainer d-flex flex-column justify-content-between" style="background-color: blueviolet;"
-        ontouchmove="BlockElasticScroll(event)">
-        <apps-logos></apps-logos>
-        <app-dock></app-dock>
-    </div>
-</ng-container>
-<ng-container *ngIf="currentColor == 'lightslategrey'">
-    <div class="homeScreenContainer d-flex flex-column justify-content-between" style="background-color: lightslategrey;"
-        ontouchmove="BlockElasticScroll(event)">
-        <apps-logos></apps-logos>
-        <app-dock></app-dock>
-    </div>
-</ng-container>
-<ng-container *ngIf="currentColor == 'yellowgreen'">
-    <div class="homeScreenContainer d-flex flex-column justify-content-between" style="background-color: yellowgreen;"
-        ontouchmove="BlockElasticScroll(event)">
-        <apps-logos></apps-logos>
-        <app-dock></app-dock>
-    </div>
-</ng-container>
-<ng-container *ngIf="currentColor == 'lightskyblue'">
-    <div class="homeScreenContainer d-flex flex-column justify-content-between" style="background-color: lightskyblue;"
-        ontouchmove="BlockElasticScroll(event)">
-        <apps-logos></apps-logos>
-        <app-dock></app-dock>
-    </div>
-</ng-container>
-<ng-container *ngIf="currentColor == 'lightcoral'">
-    <div class="homeScreenContainer d-flex flex-column justify-content-between" style="background-color: lightcoral;"
-        ontouchmove="BlockElasticScroll(event)">
-        <apps-logos></apps-logos>
-        <app-dock></app-dock>
-    </div>
-</ng-container>
-<ng-container *ngIf="currentColor == 'lightpink'">
-    <div class="homeScreenContainer d-flex flex-column justify-content-between" style="background-color: lightpink;"
-        ontouchmove="BlockElasticScroll(event)">
-        <apps-logos></apps-logos>
-        <app-dock></app-dock>
-    </div>
-</ng-container>
-<ng-container *ngIf="currentColor == 'lightseagreen'">
-    <div class="homeScreenContainer d-flex flex-column justify-content-between" style="background-color: lightseagreen;"
-        ontouchmove="BlockElasticScroll(event)">
-        <apps-logos></apps-logos>
-        <app-dock></app-dock>
-    </div>
-</ng-container>-->
