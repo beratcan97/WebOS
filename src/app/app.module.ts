@@ -35,6 +35,7 @@ import { CardGeneratorComponent } from './components/apps-launcher/apps/card-gen
 
 //Settings
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
+import { AboutComponent } from './components/apps-launcher/apps/settings/li/about/about.component';
 
 
 const appRoutes: Routes = [
@@ -53,6 +54,7 @@ const appRoutes: Routes = [
 
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
+  { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({
@@ -87,6 +89,7 @@ const appRoutes: Routes = [
 
     //Settings
     WallpaperComponent,
+    AboutComponent,
   ],
 
   imports: [
