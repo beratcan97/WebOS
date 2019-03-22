@@ -39,7 +39,9 @@ import { AboutComponent } from './components/apps-launcher/apps/settings/li/abou
 
 
 const appRoutes: Routes = [
-  { path: '', component: HomeScreenComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+
+  { path: 'home', component: HomeScreenComponent },
 
   //APPS
   { path: 'news', component: NewsComponent },
@@ -57,7 +59,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
 
   //Reroutes unmatched path
-  { path: '**', redirectTo: ''},
+  //{ path: '**', redirectTo: ''},
 ];
 
 @NgModule({
