@@ -37,13 +37,9 @@ import { CardGeneratorComponent } from './components/apps-launcher/apps/card-gen
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
 import { AboutComponent } from './components/apps-launcher/apps/settings/li/about/about.component';
 
-//Routing
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-
-  { path: 'home', component: HomeScreenComponent },
+  { path: '', component: HomeScreenComponent },
 
   //APPS
   { path: 'news', component: NewsComponent },
@@ -59,10 +55,6 @@ const appRoutes: Routes = [
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
   { path: 'about', component: AboutComponent },
-
-  //Reroutes unmatched path
-  { path: '**', component: NewsComponent },
-  //{ path: '**', redirectTo: ''},
 ];
 
 @NgModule({
@@ -107,7 +99,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule,
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
