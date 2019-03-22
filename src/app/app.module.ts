@@ -37,6 +37,8 @@ import { CardGeneratorComponent } from './components/apps-launcher/apps/card-gen
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
 import { AboutComponent } from './components/apps-launcher/apps/settings/li/about/about.component';
 
+//Routing
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -105,7 +107,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
