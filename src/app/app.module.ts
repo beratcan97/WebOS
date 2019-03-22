@@ -55,6 +55,9 @@ const appRoutes: Routes = [
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
   { path: 'about', component: AboutComponent },
+
+  //Reroutes unmatched path
+  { path: '**', redirectTo: ''},
 ];
 
 @NgModule({
