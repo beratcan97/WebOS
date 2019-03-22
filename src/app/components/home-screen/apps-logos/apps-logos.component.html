@@ -1,41 +1,67 @@
-<div class="row m-3">
-    <div class="col-3 d-flex justify-content-center">
-        <app-news-logo></app-news-logo>
+<div class="container mt-3">
+    <div class="row">
+      <div class="col p-0">
+            <div class="d-flex justify-content-center">
+                <app-news-logo></app-news-logo>
+            </div>
+      </div>
+      <div class="col p-0">
+            <div class="d-flex justify-content-center">    
+                <app-stocks-logo></app-stocks-logo>
+            </div>
+      </div>
+      <div class="col p-0">
+            <div class="d-flex justify-content-center">
+                <app-settings-logo></app-settings-logo>
+            </div>
+      </div>
+      <div class="col p-0">
+            <div class="d-flex justify-content-center">
+                <app-weather-logo></app-weather-logo>
+            </div>
+      </div>
     </div>
-    <div class="col-3 d-flex justify-content-center">
-        <app-stocks-logo></app-stocks-logo>
+    <div class="row">
+        <div class="col p-0">
+            <div class="d-flex justify-content-center">
+                <app-counter-logo></app-counter-logo>
+            </div>
+        </div>
+        <div class="col p-0">
+            <div class="d-flex justify-content-center">    
+                <app-clock-logo></app-clock-logo>
+            </div>
+        </div>
+        <div class="col p-0">
+            <div class="d-flex justify-content-center">
+                <ng-container *ngIf="device == 'Desktop'">
+                    <app-tv-logo></app-tv-logo>
+                </ng-container>
+            </div>
+        </div>
+        <div class="col p-0">
+            <div class="d-flex justify-content-center">
+                <app-calculator-logo></app-calculator-logo>
+            </div>
+        </div>
     </div>
-    <div class="col-3 d-flex justify-content-center">
-        <app-settings-logo></app-settings-logo>
-    </div>
-    <div class="col-3 d-flex justify-content-center">
-        <app-weather-logo></app-weather-logo>
-    </div>
-</div>
-<div class="row m-3">
-    <div class="col-3 d-flex justify-content-center">
-        <app-counter-logo></app-counter-logo>
-    </div>
-    <div class="col-3 d-flex justify-content-center">
-        <app-clock-logo></app-clock-logo>
-    </div>
-    <div class="col-3 d-flex justify-content-center">
-        <ng-container *ngIf="device == 'Desktop'">
-        </ng-container>
-        <app-tv-logo></app-tv-logo>
-    </div>
-    <div class="col-3 d-flex justify-content-center">
-        <app-calculator-logo></app-calculator-logo>
-    </div>
-</div>
-<div class="row m-3">
-    <div class="col-3 d-flex justify-content-center">
-        <app-card-generator-logo></app-card-generator-logo>
-    </div>
-    <div class="col-3 d-flex justify-content-center">
-    </div>
-    <div class="col-3 d-flex justify-content-center">
-    </div>
-    <div class="col-3 d-flex justify-content-center">
+    <div class="row">
+            <div class="col p-0">
+                <div class="d-flex justify-content-center">
+                    <app-card-generator-logo></app-card-generator-logo>
+                </div>
+            </div>
+            <div class="col p-0">
+                <div class="d-flex justify-content-center">    
+                </div>
+            </div>
+            <div class="col p-0">
+                <div class="d-flex justify-content-center">
+                </div>
+            </div>
+            <div class="col p-0">
+                <div class="d-flex justify-content-center">
+                </div>
+            </div>
     </div>
 </div>
