@@ -59,6 +59,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
 
   //Reroutes unmatched path
+  { path: '**', component: NewsComponent },
   //{ path: '**', redirectTo: ''},
 ];
 
