@@ -4,12 +4,12 @@
 <div class="homeScreenContainer" ontouchmove="BlockElasticScroll(event)">
   <ng-container *ngIf="lang == 'sv-SE';else second">
       <div class="li" (click)="navigate('wallpaper')">Bakgrund</div>
-      <div class="li" (click)="navigate('about')">Hakkında</div>
+      <div class="li" (click)="navigate('about')">Om</div>
   </ng-container>
   <ng-template #second>
     <ng-container *ngIf="lang == 'tr-TR';else third">
         <div class="li" (click)="navigate('wallpaper')">Arkaplan</div>
-        <div class="li" (click)="navigate('about')">Om</div>
+        <div class="li" (click)="navigate('about')">Hakkında</div>
     </ng-container>
   </ng-template>
   <ng-template #third>

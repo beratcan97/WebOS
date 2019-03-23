@@ -13,7 +13,9 @@ export class SlotComponent implements OnInit {
   spinner1: number = 0;
   spinner2: number = 0;
   spinner3: number = 0;
+  bet: number = 0;
   cash: number = 10;
+  result: string;
 
   constructor() { }
 
@@ -26,30 +28,34 @@ export class SlotComponent implements OnInit {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  spin() {
-    if (this.cash) {
-      this.cash = this.cash - 1;
+  spin(bet) {
+    if (this.cash > 0) {
+      this.cash = this.cash - bet;
 
       this.spinner1 = this.generateRandomNumber();
       this.spinner2 = this.generateRandomNumber();
       this.spinner3 = this.generateRandomNumber();
   
-      this.checkWin();
+      this.checkWin(bet);
     } else {
-      alert("No money left");
+      this.result = 'No money left';
     }
   }
 
-  checkWin() {
+  checkWin(bet) {
     //All 3 same
     if (this.spinner1 === this.spinner2 && this.spinner1 === this.spinner3) {
-      alert('jackpot');
-      this.cash = this.cash + 1001;
-    } 
+      this.result = 'Jackpot';
+      this.cash = this.cash + (100 * bet);
+    }
     //2 same
     else if (this.spinner1 === this.spinner2 || this.spinner2 === this.spinner3 || this.spinner1 === this.spinner3) {
-      alert('Win');
-      this.cash = this.cash + 4;
+      this.result = 'Win';
+      this.cash = this.cash + (4 * bet);
+    }
+    //Lose
+    else {
+      this.result = 'Lose';
     }
   }
 
