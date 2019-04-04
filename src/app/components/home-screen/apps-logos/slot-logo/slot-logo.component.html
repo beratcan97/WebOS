@@ -1,10 +1,9 @@
 <div (click)="navigate()">
-  
     <img src="assets/images/apps-logos/slotmachine.gif" alt="slotmachine icon" class="app">
     <div class="d-flex justify-content-center">
       <p>
         <ng-container *ngIf="lang == 'sv-SE';else second">
-            Spelautomat
+          Spelautomat
         </ng-container>
         <ng-template #second>
           <ng-container *ngIf="lang == 'tr-TR';else third">
@@ -12,7 +11,7 @@
           </ng-container>
         </ng-template>
         <ng-template #third>
-            Slotmachine
+          Slots
         </ng-template>
       </p>
     </div>
