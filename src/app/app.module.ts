@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HomeScreenComponent } from './components/home-screen/home-screen.component';
 import { DockComponent } from './components/home-screen/dock/dock.component';
@@ -22,6 +22,7 @@ import { TVLogoComponent } from './components/home-screen/apps-logos/tv-logo/tv-
 import { CalculatorLogoComponent } from './components/home-screen/apps-logos/calculator-logo/calculator-logo.component';
 import { CardGeneratorLogoComponent } from './components/home-screen/apps-logos/card-generator-logo/card-generator-logo.component';
 import { SlotLogoComponent } from './components/home-screen/apps-logos/slot-logo/slot-logo.component';
+import { NotesLogoComponent } from './components/home-screen/apps-logos/notes-logo/notes-logo.component';
 
 //APPS
 import { NewsComponent } from './components/apps-launcher/apps/news/news.component';
@@ -34,6 +35,7 @@ import { TVComponent } from './components/apps-launcher/apps/tv/tv.component';
 import { CalculatorComponent } from './components/apps-launcher/apps/calculator/calculator.component';
 import { CardGeneratorComponent } from './components/apps-launcher/apps/card-generator/card-generator.component';
 import { SlotComponent } from './components/apps-launcher/apps/slot/slot.component';
+import { NotesComponent } from './components/apps-launcher/apps/notes/notes.component';
 
 //Settings
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
@@ -54,6 +56,7 @@ const appRoutes: Routes = [
   { path: 'calculator', component: CalculatorComponent },
   { path: 'cardGenerator', component: CardGeneratorComponent },
   { path: 'slot', component: SlotComponent },
+  { path: 'notes', component: NotesComponent },
 
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
@@ -77,6 +80,8 @@ const appRoutes: Routes = [
     TVLogoComponent,
     CalculatorLogoComponent,
     CardGeneratorLogoComponent,
+    SlotLogoComponent,
+    NotesLogoComponent,
 
     // APPS
     NewsComponent,
@@ -89,12 +94,12 @@ const appRoutes: Routes = [
     TVComponent,
     CalculatorComponent,
     CardGeneratorComponent,
+    SlotComponent,
+    NotesComponent,
 
     //Settings
     WallpaperComponent,
     AboutComponent,
-    SlotLogoComponent,
-    SlotComponent,
   ],
 
   imports: [
@@ -103,6 +108,8 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
