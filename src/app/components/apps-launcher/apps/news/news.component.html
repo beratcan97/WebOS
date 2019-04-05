@@ -1,47 +1,49 @@
-<app-apps-launcher></app-apps-launcher>
+<div class="d-flex justify-content-center">
+    <app-apps-launcher></app-apps-launcher> 
 
-<div class="mx-3">
-    <ng-container *ngIf="lang == 'sv-SE';else second">
-        <div *ngIf="isEngNewsDATALoaded; else loading">
+    <div class="mx-3 maxDesktop">
+        <ng-container *ngIf="lang == 'sv-SE';else second">
+            <div *ngIf="isEngNewsDATALoaded; else loading">
 
-            <ng-container *ngIf="false;else third"></ng-container>
+                <ng-container *ngIf="false;else third"></ng-container>
 
-        </div>
-    </ng-container>
-    <ng-template #second>
-        <ng-container *ngIf="lang == 'tr-TR';else third">
-
-            <ng-container *ngIf="false;else third"></ng-container>
-
+            </div>
         </ng-container>
-    </ng-template>
-    <ng-template #third>
-        <div class="d-flex justify-content-center">
-            <img class="logo" src="assets/images/apps/news/CNN-logo.png" alt="CNN logo">
-        </div>
-        <div *ngIf="isEngNewsDATALoaded">
-            <ng-container *ngFor="let articles of engNewsDATA.articles">
-                <div class="card my-3 shadow">
-                    <img class="card-img-top" src="{{articles.urlToImage}}" alt="News images">
-                    <div class="card-body">
-                        <h5 class="card-title">{{articles.title}}</h5>
-                        <p class="card-text">{{articles.publishedAt}}</p>
-                        <p class="card-text">{{articles.description}}</p>
+        <ng-template #second>
+            <ng-container *ngIf="lang == 'tr-TR';else third">
 
-                        <div class="collapse" id="test">
-                            {{articles.content}}
-                        </div>
-                    </div>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#test" role="button"
-                    aria-expanded="false" aria-controls="collapseExample">More / Less</a>
-                </div>
+                <ng-container *ngIf="false;else third"></ng-container>
+
             </ng-container>
+        </ng-template>
+        <ng-template #third>
+            <div class="d-flex justify-content-center">
+                <img class="logo" src="assets/images/apps/news/CNN-logo.png" alt="CNN logo">
+            </div>
+            <div *ngIf="isEngNewsDATALoaded">
+                <ng-container *ngFor="let articles of engNewsDATA.articles">
+                    <div class="card my-3 shadow">
+                        <img class="card-img-top" src="{{articles.urlToImage}}" alt="News images">
+                        <div class="card-body">
+                            <h5 class="card-title">{{articles.title}}</h5>
+                            <p class="card-text">{{articles.publishedAt}}</p>
+                            <p class="card-text">{{articles.description}}</p>
+
+                            <div class="collapse" id="test">
+                                {{articles.content}}
+                            </div>
+                        </div>
+                        <a class="btn btn-primary" data-toggle="collapse" href="#test" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">More / Less</a>
+                    </div>
+                </ng-container>
+            </div>
+        </ng-template>
+    </div>
+
+    <ng-template #loading>
+        <div class="d-flex justify-content-center align-items-center">
+            <img src=" assets/images/spinner.gif" alt="Loading">
         </div>
     </ng-template>
 </div>
-
-<ng-template #loading>
-    <div class="d-flex justify-content-center align-items-center">
-        <img src=" assets/images/spinner.gif" alt="Loading">
-    </div>
-</ng-template>

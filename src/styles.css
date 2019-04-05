@@ -17,3 +17,7 @@ body {
     /*  Disables double tap to zoom    */
     touch-action: manipulation;
 }
+
+.maxDesktop {
+    max-width: 50rem;
+}
