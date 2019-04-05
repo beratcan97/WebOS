@@ -18,6 +18,6 @@ export class WallpaperComponent implements OnInit {
 
   localStorage(color) {
     localStorage.setItem('wallpaper', color);
-    this.router.navigate([]);
+    this.router.navigate(['']);
   }
 }
