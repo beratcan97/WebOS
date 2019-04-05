@@ -1,0 +1,25 @@
+<app-apps-launcher></app-apps-launcher>
+
+<div class="d-flex justify-content-center">
+  <div class="mx-3 maxDesktop w-100 mt-3">
+
+    <ng-container *ngIf="lang == 'sv-SE';else second">
+      <h1>Anteckningar</h1>
+      <p>En plats för bra idéer</p>
+    </ng-container>
+    <ng-template #second>
+      <ng-container *ngIf="lang == 'tr-TR';else third">
+        <h1>Notlar</h1>
+        <p>Harika fikirler için bir yer</p>
+      </ng-container>
+    </ng-template>
+    <ng-template #third>
+      <h1>Notes</h1>
+      <p>A place for great ideas</p>
+    </ng-template>
+
+    <form [formGroup]="notesForm">
+      <textarea class="form-control w-100" rows="5" id="notes" formControlName="notes" (change)="saveNote()"></textarea>
+    </form>
+  </div>
+</div>
