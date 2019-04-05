@@ -1,7 +1,7 @@
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center vh-100-height">
   <app-apps-launcher></app-apps-launcher>
 
-  <div class="d-flex justify-content-between flex-column vh-100-height maxDesktop w-100">
+  <div class="d-flex justify-content-between flex-column maxDesktop w-100">
     <div>
       <h1>{{this.screenNumber}}</h1>
       <h3>{{this.infoScreenNumber}}</h3>
@@ -32,7 +32,7 @@
         <div class="col btn btn-primary m-1" (click)="this.multiply()">*</div>
       </div>
 
-      <div class="row">
+      <div class="row pb-5">
         <div class="col btn btn-primary m-1" (click)="this.equals()">=</div>
         <div class="col btn btn-primary m-1" (click)="this.reset()">C</div>
       </div>
