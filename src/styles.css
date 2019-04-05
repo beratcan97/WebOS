@@ -21,3 +21,7 @@ body {
 .maxDesktop {
     max-width: 50rem;
 }
+
+.vh-100-height {
+    height: 100vh;
+}
