@@ -10,10 +10,13 @@ export class ClockComponent implements OnInit {
 
   time;
 
-  constructor() { }
+  constructor() {
+    setInterval(() => {
+      let dateData = new Date();
+      this.time = formatDate(dateData, 'hh:mm:ss', 'en-US');
+    }, 1000)
+   }
 
   ngOnInit() {
-    let dateData = new Date();
-    this.time = formatDate(dateData, 'hh:mm:ss', 'en-US');
   }
 }
