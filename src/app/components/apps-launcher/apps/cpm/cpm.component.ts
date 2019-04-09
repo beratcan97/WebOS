@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-cpm',
@@ -8,13 +7,25 @@ import { formatDate } from '@angular/common';
 })
 export class CpmComponent implements OnInit {
 
-  sec: number = 0;
+  lang = window.navigator.language;
+
+  timeLeft: number = 10;
   clicks: number = 0;
   cpm: number = 0;
+  highScore: number = parseInt(localStorage.getItem('cpmHighScore'));
+  gameRunning: boolean = false;
 
   constructor() {
+    if (!localStorage.getItem('cpmHighScore')) {
+      this.highScore = 0;
+    }
+
     setInterval(() => {
-      this.sec ++;
+      if (this.gameRunning && this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.cpmCounter();
+      }
     }, 1000)
   }
 
@@ -22,10 +33,19 @@ export class CpmComponent implements OnInit {
   }
 
   clickCounter() {
-    this.clicks ++;
+    this.clicks++;
   }
 
   cpmCounter() {
-    this.cpm = ((this.clicks * 60) / this.sec);
+    this.cpm = (this.clicks * 6);
+    if (this.cpm > this.highScore) {
+      localStorage.setItem('cpmHighScore', this.cpm.toString());
+      this.highScore = this.cpm;
+    }
+  }
+
+  restartGame() {
+    this.gameRunning = true;
+    this.timeLeft = 10;
   }
 }

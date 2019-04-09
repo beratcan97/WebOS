@@ -1,6 +1,59 @@
 <app-apps-launcher></app-apps-launcher>
-
 <div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-dark">
-    {{sec}}
-    <button><h1 (click)="clickCounter()">{{cpm}}</h1></button>
+    <div class="d-flex flex-column justify-content-center" *ngIf="!gameRunning">
+        <ng-container *ngIf="lang == 'sv-SE';else second">
+            <p class="text-white">Din högsta poäng: {{highScore}}</p>
+            <button class="btn btn-primary" (click)="gameRunning = true;">Starta</button>
+        </ng-container>
+        <ng-template #second>
+            <ng-container *ngIf="lang == 'tr-TR';else third">
+                <p class="text-white">Senin enyüksek puanın: {{highScore}}</p>
+                <button class="btn btn-primary" (click)="gameRunning = true;">Başlat</button>
+            </ng-container>
+        </ng-template>
+        <ng-template #third>
+            <p class="text-white">Your high score: {{highScore}}</p>
+            <button class="btn btn-primary" (click)="gameRunning = true;">Start</button>
+        </ng-template>
+    </div>
+
+    <div *ngIf="gameRunning">
+        <div class="d-flex flex-column justify-content-center" *ngIf="timeLeft > 0; else gameEnds">
+            <ng-container *ngIf="lang == 'sv-SE';else second">
+                <h1 class="text-white">Tid kvar: {{timeLeft}}</h1>
+                <button class="btn btn-primary" (click)="clickCounter()">Klicka här!</button>
+            </ng-container>
+            <ng-template #second>
+                <ng-container *ngIf="lang == 'tr-TR';else third">
+                    <h1 class="text-white">Kalan sure: {{timeLeft}}</h1>
+                    <button class="btn btn-primary" (click)="clickCounter()">Buraya bas!</button>
+                </ng-container>
+            </ng-template>
+            <ng-template #third>
+                <h1 class="text-white">Time left: {{timeLeft}}</h1>
+                <button class="btn btn-primary" (click)="clickCounter()">Click here!</button>
+            </ng-template>
+        </div>
+        <ng-template #gameEnds>
+            <div class="d-flex flex-column justify-content-center">
+                <ng-container *ngIf="lang == 'sv-SE';else second">
+                    <p class="text-white">Din högsta poäng: {{highScore}}</p>
+                    <p class="text-white">Din poäng: {{cpm}}</p>
+                    <button class="btn btn-primary" (click)="restartGame();">Starta om!</button>
+                </ng-container>
+                <ng-template #second>
+                    <ng-container *ngIf="lang == 'tr-TR';else third">
+                        <p class="text-white">Senin enyüksek puanın: {{highScore}}</p>
+                        <p class="text-white">Senin puanın: {{cpm}}</p>
+                        <button class="btn btn-primary" (click)="restartGame();">Tekrar başlat!</button>
+                    </ng-container>
+                </ng-template>
+                <ng-template #third>
+                    <p class="text-white">Your high score: {{highScore}}</p>
+                    <p class="text-white">Your score: {{cpm}}</p>
+                    <button class="btn btn-primary" (click)="restartGame();">Play again!</button>
+                </ng-template>
+            </div>
+        </ng-template>
+    </div>
 </div>
