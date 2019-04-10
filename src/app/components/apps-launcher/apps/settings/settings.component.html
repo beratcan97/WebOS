@@ -1,7 +1,7 @@
 <app-apps-launcher></app-apps-launcher>
 
 
-<div class="homeScreenContainer" ontouchmove="BlockElasticScroll(event)">
+<div class="homeScreenContainer iosBgColor" ontouchmove="BlockElasticScroll(event)">
   <ng-container *ngIf="lang == 'sv-SE';else second">
       <div class="li" (click)="navigate('wallpaper')">Bakgrund</div>
       <div class="li" (click)="navigate('about')">Om</div>
