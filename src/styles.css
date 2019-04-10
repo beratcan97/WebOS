@@ -25,3 +25,7 @@ body {
 .vh-100-height {
     height: 100vh;
 }
+
+.iosBgColor {
+    background-color: #f0eff4;
+}

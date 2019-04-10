@@ -12,11 +12,11 @@ export class CpmComponent implements OnInit {
   timeLeft: number = 10;
   clicks: number = 0;
   cpm: number = 0;
-  highScore: number = parseInt(localStorage.getItem('cpmHighScoreBugfix'));
+  highScore: number = parseInt(localStorage.getItem('cpmGameHighScore'));
   gameRunning: boolean = false;
 
   constructor() {
-    if (!localStorage.getItem('cpmHighScoreBugfix')) {
+    if (!localStorage.getItem('cpmGameHighScore')) {
       this.highScore = 0;
     }
 
@@ -39,7 +39,7 @@ export class CpmComponent implements OnInit {
   cpmCounter() {
     this.cpm = (this.clicks * 6);
     if (this.cpm > this.highScore) {
-      localStorage.setItem('cpmHighScoreBugfix', this.cpm.toString());
+      localStorage.setItem('cpmGameHighScore', this.cpm.toString());
       this.highScore = this.cpm;
     }
   }
