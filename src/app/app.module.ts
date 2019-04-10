@@ -23,6 +23,7 @@ import { CalculatorLogoComponent } from './components/home-screen/apps-logos/cal
 import { CardGeneratorLogoComponent } from './components/home-screen/apps-logos/card-generator-logo/card-generator-logo.component';
 import { SlotLogoComponent } from './components/home-screen/apps-logos/slot-logo/slot-logo.component';
 import { NotesLogoComponent } from './components/home-screen/apps-logos/notes-logo/notes-logo.component';
+import { CpmLogoComponent } from './components/home-screen/apps-logos/cpm-logo/cpm-logo.component';
 
 //APPS
 import { NewsComponent } from './components/apps-launcher/apps/news/news.component';
@@ -36,11 +37,11 @@ import { CalculatorComponent } from './components/apps-launcher/apps/calculator/
 import { CardGeneratorComponent } from './components/apps-launcher/apps/card-generator/card-generator.component';
 import { SlotComponent } from './components/apps-launcher/apps/slot/slot.component';
 import { NotesComponent } from './components/apps-launcher/apps/notes/notes.component';
+import { CpmComponent } from './components/apps-launcher/apps/cpm/cpm.component';
 
 //Settings
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
 import { AboutComponent } from './components/apps-launcher/apps/settings/li/about/about.component';
-
 
 const appRoutes: Routes = [
   { path: '', component: HomeScreenComponent },
@@ -57,6 +58,7 @@ const appRoutes: Routes = [
   { path: 'cardGenerator', component: CardGeneratorComponent },
   { path: 'slot', component: SlotComponent },
   { path: 'notes', component: NotesComponent },
+  { path: 'cpm', component: CpmComponent },
 
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
@@ -82,6 +84,7 @@ const appRoutes: Routes = [
     CardGeneratorLogoComponent,
     SlotLogoComponent,
     NotesLogoComponent,
+    CpmLogoComponent,
 
     // APPS
     NewsComponent,
@@ -96,6 +99,7 @@ const appRoutes: Routes = [
     CardGeneratorComponent,
     SlotComponent,
     NotesComponent,
+    CpmComponent,
 
     //Settings
     WallpaperComponent,
