@@ -24,6 +24,7 @@ import { CardGeneratorLogoComponent } from './components/home-screen/apps-logos/
 import { SlotLogoComponent } from './components/home-screen/apps-logos/slot-logo/slot-logo.component';
 import { NotesLogoComponent } from './components/home-screen/apps-logos/notes-logo/notes-logo.component';
 import { CpmLogoComponent } from './components/home-screen/apps-logos/cpm-logo/cpm-logo.component';
+import { DualWebLogoComponent } from './components/home-screen/apps-logos/dual-web-logo/dual-web-logo.component';
 
 //APPS
 import { NewsComponent } from './components/apps-launcher/apps/news/news.component';
@@ -38,6 +39,7 @@ import { CardGeneratorComponent } from './components/apps-launcher/apps/card-gen
 import { SlotComponent } from './components/apps-launcher/apps/slot/slot.component';
 import { NotesComponent } from './components/apps-launcher/apps/notes/notes.component';
 import { CpmComponent } from './components/apps-launcher/apps/cpm/cpm.component';
+import { DualWebComponent } from './components/apps-launcher/apps/dual-web/dual-web.component';
 
 //Settings
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
@@ -59,6 +61,7 @@ const appRoutes: Routes = [
   { path: 'slot', component: SlotComponent },
   { path: 'notes', component: NotesComponent },
   { path: 'cpm', component: CpmComponent },
+  { path: 'dualWeb', component: DualWebComponent },
 
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
@@ -85,6 +88,7 @@ const appRoutes: Routes = [
     SlotLogoComponent,
     NotesLogoComponent,
     CpmLogoComponent,
+    DualWebLogoComponent,
 
     // APPS
     NewsComponent,
@@ -100,6 +104,7 @@ const appRoutes: Routes = [
     SlotComponent,
     NotesComponent,
     CpmComponent,
+    DualWebComponent,
 
     //Settings
     WallpaperComponent,
