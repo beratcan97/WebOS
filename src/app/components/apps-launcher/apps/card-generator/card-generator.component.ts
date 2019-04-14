@@ -10,6 +10,8 @@ export class CardGeneratorComponent implements OnInit {
   lang = window.navigator.language;
   isLoaded: boolean = false;
 
+  masterCards = [5226437592277603, 5329412398350272, 5576699369446382, 5499825907071549, 5572311002733002, 5412933130618658, 5252016241379734, 5186504395771567, 5408155025300350, 5101608596193455];
+
   cardNumber: number;
 
   constructor() { }
@@ -28,32 +30,6 @@ export class CardGeneratorComponent implements OnInit {
 
   generateCard(): void {
 
-    let validCard: boolean = false;
-    let generatedCardNumber: number;
-
-    while (!validCard) {
-      generatedCardNumber = Math.floor((Math.random() * 9999999999999999) + 1000000000000000);
-
-      if (this.checkCard(generatedCardNumber) == true) {
-        validCard = true;
-      }
-    }
-
-    this.cardNumber = generatedCardNumber;
-  }
-
-  checkCard(generatedCardNumber) {
-    let sum = 0;
-    for (var i = 0; i < generatedCardNumber.length; i++) {
-      var intVal = parseInt(generatedCardNumber.substr(i, 1));
-      if (i % 2 == 0) {
-        intVal *= 2;
-        if (intVal > 9) {
-          intVal = 1 + (intVal % 10);
-        }
-      }
-      sum += intVal;
-    }
-    return (sum % 10) == 0;
+  this.cardNumber = this.masterCards[Math.floor(Math.random() * 11)];
   }
 }

@@ -5,17 +5,14 @@
 
     <ng-container *ngIf="lang == 'sv-SE';else second">
       {{cardNumber}}
-      <p>Kortet är inte giltigt just nu</p>
     </ng-container>
     <ng-template #second>
       <ng-container *ngIf="lang == 'tr-TR';else third">
         {{cardNumber}}
-        <p>Kart şimdilik geçerli değil</p>
       </ng-container>
     </ng-template>
     <ng-template #third>
       {{cardNumber}}
-      <p>The card is not valid for now</p>
     </ng-template>
   </div>
 </ng-container>
