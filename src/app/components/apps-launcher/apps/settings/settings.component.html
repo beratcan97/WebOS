@@ -3,17 +3,17 @@
 
 <div class="homeScreenContainer iosBgColor" ontouchmove="BlockElasticScroll(event)">
   <ng-container *ngIf="lang == 'sv-SE';else second">
-      <div class="li" (click)="navigate('wallpaper')">Bakgrund</div>
-      <div class="li" (click)="navigate('about')">Om</div>
+      <li class="iosStyleListItem" (click)="navigate('wallpaper')">Bakgrund</li>
+      <li class="iosStyleListItem" (click)="navigate('about')">Om</li>
   </ng-container>
   <ng-template #second>
     <ng-container *ngIf="lang == 'tr-TR';else third">
-        <div class="li" (click)="navigate('wallpaper')">Arkaplan</div>
-        <div class="li" (click)="navigate('about')">Hakkında</div>
+        <li class="iosStyleListItem" (click)="navigate('wallpaper')">Arkaplan</li>
+        <li class="iosStyleListItem" (click)="navigate('about')">Hakkında</li>
     </ng-container>
   </ng-template>
   <ng-template #third>
-      <div class="li" (click)="navigate('wallpaper')">Wallpaper</div>
-      <div class="li" (click)="navigate('about')">About</div>
+      <li class="iosStyleListItem" (click)="navigate('wallpaper')">Wallpaper</li>
+      <li class="iosStyleListItem" (click)="navigate('about')">About</li>
   </ng-template>
 </div>
