@@ -21,10 +21,4 @@ export class HomeScreenComponent implements OnInit {
       return false;
     }
   }
-
-  //Block rubber banding
-  BlockElasticScroll(event) {
-    event.preventDefault();
-  }
-
 }

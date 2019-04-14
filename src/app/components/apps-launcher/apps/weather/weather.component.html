@@ -1,7 +1,7 @@
 <app-apps-launcher></app-apps-launcher>
 
 <ng-container *ngIf="weatherData">
-    <div class="d-flex flex-column align-items-center">
+    <div class="d-flex flex-column align-items-center iosBgColor vh-100-height">
         <img src="https://openweathermap.org/img/w/{{weatherData.list[0].weather[0].icon}}.png" alt="{{weatherData.list[0].weather[0].description}}"
             height="100px" width="100px">
         <h1>{{weatherData.city.name}}</h1>

@@ -1,7 +1,7 @@
 <ng-container *ngIf="isLoaded; else loadingScreen">
   <app-apps-launcher></app-apps-launcher>
 
-  <div class="fullScreen d-flex flex-column justify-content-center align-items-center iosBgColor">
+  <div class="fullScreen d-flex flex-column justify-content-center align-items-center iosBgColor vh-100-height">
 
     <ng-container *ngIf="lang == 'sv-SE';else second">
       {{cardNumber}}
