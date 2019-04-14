@@ -32,8 +32,13 @@ export class FlappyComponent implements OnInit {
     if (canvas.getContext) {
       var ctx = canvas.getContext('2d');
 
+      //Player
       ctx.fillStyle = 'red';
       ctx.fillRect(30, 120, 30, 30);
+
+      //Moving obstacle
+      ctx.fillStyle = 'green';
+      ctx.fillRect(300, 120, 10, 200);
     }
   }
 
