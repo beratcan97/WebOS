@@ -1,0 +1,47 @@
+<app-apps-launcher></app-apps-launcher>
+<div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-dark">
+    <div class="d-flex flex-column justify-content-center" *ngIf="!gameRunning">
+        <ng-container *ngIf="lang == 'sv-SE';else second">
+            <p class="text-white">Din högsta poäng: {{highScore}}</p>
+            <button class="btn btn-primary" (click)="gameRunning = true;">Starta</button>
+        </ng-container>
+        <ng-template #second>
+            <ng-container *ngIf="lang == 'tr-TR';else third">
+                <p class="text-white">Senin enyüksek puanın: {{highScore}}</p>
+                <button class="btn btn-primary" (click)="gameRunning = true;">Başlat</button>
+            </ng-container>
+        </ng-template>
+        <ng-template #third>
+            <p class="text-white">Your high score: {{highScore}}</p>
+            <button class="btn btn-primary" (click)="gameRunning = true; createGameArea()">Start</button>
+        </ng-template>
+    </div>
+
+    <div *ngIf="gameRunning">
+        <div class="d-flex flex-column justify-content-center">
+            <canvas id="gameScreen" width="200" height="200"></canvas>
+        </div>
+<!--
+        <ng-template #gameEnds>
+            <div class="d-flex flex-column justify-content-center">
+                <ng-container *ngIf="lang == 'sv-SE';else second">
+                    <p class="text-white">Din högsta poäng: {{highScore}}</p>
+                    <p class="text-white">Din poäng:</p>
+                    <button class="btn btn-primary mt-5" (click)="restartGame();">Starta om!</button>
+                </ng-container>
+                <ng-template #second>
+                    <ng-container *ngIf="lang == 'tr-TR';else third">
+                        <p class="text-white">Senin enyüksek puanın: {{highScore}}</p>
+                        <p class="text-white">Senin puanın:</p>
+                        <button class="btn btn-primary mt-5" (click)="restartGame();">Tekrar başlat!</button>
+                    </ng-container>
+                </ng-template>
+                <ng-template #third>
+                    <p class="text-white">Your high score: {{highScore}}</p>
+                    <p class="text-white">Your score:</p>
+                    <button class="btn btn-primary mt-5" (click)="restartGame();">Play again!</button>
+                </ng-template>
+            </div>
+        </ng-template>-->
+    </div>
+</div>
