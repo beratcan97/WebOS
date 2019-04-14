@@ -10,8 +10,8 @@ export class FlappyComponent implements OnInit {
   lang = window.navigator.language;
 
   highScore: number = parseInt(localStorage.getItem('cpmGameHighScore'));
-  gameRunning: boolean = false;
-  
+  gameRunning: boolean = true;
+
   constructor() {
     if (!localStorage.getItem('flappyGameHighScore')) {
       this.highScore = 0;
@@ -19,26 +19,25 @@ export class FlappyComponent implements OnInit {
   }
 
   ngOnInit() {
+    setInterval(() => {
+      this.updateGameScreen();
+    }, 1000)
   }
 
-  async delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  updateGameScreen() {
+  }
+
+  createGameArea() {
+    var canvas = document.getElementById('gameScreen');
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = 'red';
+      ctx.fillRect(30, 120, 30, 30);
+    }
   }
 
   restartGame() {
     this.gameRunning = true;
-  }
-
-  createGameArea() {
-    this.delay(3000).then(any => {
-      var canvas = document.getElementById('gameScreen');
-      var ctx = canvas.getContext('2d');
-
-      ctx.fillStyle = 'red';
-      ctx.fillRect(0, 0, 100, 100);
-
-      ctx.fillStyle = 'blue';
-      ctx.fillRect(0, 0, 10, 10);
-    });
   }
 }
