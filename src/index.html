@@ -40,8 +40,14 @@
 
 </head>
 
-<body>
+<body ontouchmove="BlockElasticScroll(event);">
   <app-root></app-root>
 </body>
+
+<script>
+  function BlockElasticScroll(event) {
+    event.preventDefault();
+  }
+</script>
 
 </html>
