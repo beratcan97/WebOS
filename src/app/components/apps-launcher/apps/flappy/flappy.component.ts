@@ -12,7 +12,7 @@ export class FlappyComponent implements OnInit {
 
 
   //Player
-  playerJumps = false;
+  playerBottom = 50;
 
   //pipe
   bottomPipe = 1;
@@ -22,7 +22,8 @@ export class FlappyComponent implements OnInit {
 
   ngOnInit() {
     setInterval(() => {
-      this.tubeCreate();
+      this.tubeUpdate();
+      this.updatePlayer();
     }, 100)
   }
 
@@ -30,8 +31,8 @@ export class FlappyComponent implements OnInit {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  tubeCreate() {
-    if (this.bottomPipe == 70) {
+  tubeUpdate() {
+    if (this.bottomPipe == 100) {
       this.bottomPipe = 1;
     } else {
       this.bottomPipe++;
@@ -39,14 +40,13 @@ export class FlappyComponent implements OnInit {
     }
   }
 
-  onScreenClick() {
-    this.playerJumps = true;
-    this.delay(250).then(any => {
-      this.playerJumps = false;
-    });
+  updatePlayer() {
+    this.playerBottom--;
+    document.getElementById('player').style.bottom = (this.playerBottom.toString() + '%');
   }
 
-  restartGame() {
-    this.gameRunning = true;
+  onScreenClick() {
+    this.playerBottom = this.playerBottom + 5;
+    document.getElementById('player').style.bottom = (this.playerBottom.toString() + '%');
   }
 }
