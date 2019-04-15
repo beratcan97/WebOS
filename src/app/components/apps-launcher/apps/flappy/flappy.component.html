@@ -1,5 +1,6 @@
 <app-apps-launcher></app-apps-launcher>
-<div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-dark" (click)="onScreenClick()">
+<div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-primary"
+    (click)="onScreenClick()">
     <div class="d-flex flex-column justify-content-center" *ngIf="!gameRunning">
         <ng-container *ngIf="lang == 'sv-SE';else second">
             <p class="text-white">Din högsta poäng: {{highScore}}</p>
@@ -19,6 +20,7 @@
 
     <div *ngIf="gameRunning">
         <div class="d-flex flex-column justify-content-center">
+            <img src="assets/images/apps/flappy/cloud.gif" class="cloud">
             <img src="assets/images/apps/flappy/player.gif" id="player" class="player">
             <img src="assets/images/apps/flappy/bottom-pipe.png" id="bp1" class="bottomPipe">
         </div>

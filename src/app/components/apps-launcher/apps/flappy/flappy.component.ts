@@ -53,7 +53,7 @@ export class FlappyComponent implements OnInit {
   }
 
   checkCrash(bp): void {
-    if (bp > 70 && bp < 90 && this.playerBottom < 50) {
+    if (bp > 70 && bp < 90 && this.playerBottom < 20) {
       alert('You lose');
       this.resetGame();
     }
