@@ -31,8 +31,12 @@ export class FlappyComponent implements OnInit {
   }
 
   tubeCreate() {
-    this.bottomPipe++;
-    document.getElementById('bp1').style.right = (this.bottomPipe.toString() + 'vh');
+    if (this.bottomPipe == 70) {
+      this.bottomPipe = 1;
+    } else {
+      this.bottomPipe++;
+      document.getElementById('bp1').style.right = (this.bottomPipe.toString() + '%');
+    }
   }
 
   onScreenClick() {

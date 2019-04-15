@@ -1,15 +1,13 @@
 /*   player */
 .player {
-    width: 50px;
+    width: 10%;
     position: fixed;
-    left: 50px;
+    left: 10%;
     bottom: 50vh;
 }
 .playerJump {
     bottom: 60vh;
 }
-
-
 
 /*  Pipes   */
 .bottomPipe {
