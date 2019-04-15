@@ -14,20 +14,30 @@ export class FlappyComponent implements OnInit {
   //Player
   playerJumps = false;
 
+  //pipe
+  bottomPipe = 1;
 
   constructor() {
   }
 
   ngOnInit() {
-
+    setInterval(() => {
+      this.tubeCreate();
+    }, 100)
   }
+
   async delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  tubeCreate() {
+    this.bottomPipe++;
+    document.getElementById('bp1').style.right = (this.bottomPipe.toString() + 'vh');
+  }
+
   onScreenClick() {
     this.playerJumps = true;
-    this.delay(500).then(any => {
+    this.delay(250).then(any => {
       this.playerJumps = false;
     });
   }
