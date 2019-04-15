@@ -1,0 +1,10 @@
+/*   player */
+.player {
+    width: 50px;
+    position: fixed;
+    left: 50px;
+    bottom: 50vh;
+}
+.playerJump {
+    bottom: 60vh;
+}

@@ -1,5 +1,5 @@
 <app-apps-launcher></app-apps-launcher>
-<div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-dark">
+<div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-dark" (click)="onScreenClick()">
     <div class="d-flex flex-column justify-content-center" *ngIf="!gameRunning">
         <ng-container *ngIf="lang == 'sv-SE';else second">
             <p class="text-white">Din högsta poäng: {{highScore}}</p>
@@ -19,10 +19,7 @@
 
     <div *ngIf="gameRunning">
         <div class="d-flex flex-column justify-content-center">
-            <!--<canvas id="gameScreen" width="480" height="270"></canvas>-->
-            <button (click)="createGameArea()">Start</button>
-
-            <canvas id="gameScreen" width="480" height="270"></canvas>
+            <img src="assets/images/apps/flappy/player.gif" class="player" [ngClass]="{playerJump: playerJumps}">
         </div>
         <!--
         <ng-template #gameEnds>
