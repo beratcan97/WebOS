@@ -31,22 +31,39 @@ export class FlappyComponent implements OnInit {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  tubeUpdate() {
+  tubeUpdate(): void {
+    this.bottomPipe++;
+    this.checkCrash(this.bottomPipe);
+
     if (this.bottomPipe == 100) {
       this.bottomPipe = 1;
     } else {
-      this.bottomPipe++;
       document.getElementById('bp1').style.right = (this.bottomPipe.toString() + '%');
     }
   }
 
-  updatePlayer() {
+  updatePlayer(): void {
     this.playerBottom--;
     document.getElementById('player').style.bottom = (this.playerBottom.toString() + '%');
   }
 
-  onScreenClick() {
+  onScreenClick(): void {
     this.playerBottom = this.playerBottom + 5;
     document.getElementById('player').style.bottom = (this.playerBottom.toString() + '%');
+  }
+
+  checkCrash(bp): void {
+    if (bp > 70 && bp < 90 && this.playerBottom < 50) {
+      alert('You lose');
+      this.resetGame();
+    }
+  }
+
+  resetGame() {
+    //Player
+    this.playerBottom = 50;
+
+    //pipe
+    this.bottomPipe = 1;
   }
 }
