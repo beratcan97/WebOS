@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-flappy',
@@ -15,8 +15,12 @@ export class FlappyComponent implements OnInit, OnDestroy {
   playerBottom = 50;
 
   //pipe
+  //Line 1
   topPipe = 1;
   bottomPipe = 1;
+  //Line 2
+  topPipe2 = 1;
+  bottomPipe2 = 1;
 
   //Score
   highScore: number = parseInt(localStorage.getItem('flappyGameHighScore'));
@@ -34,9 +38,9 @@ export class FlappyComponent implements OnInit, OnDestroy {
     }
 
     this.timer = setInterval(() => {
+      this.checkCrash();
       this.pipeUpdate();
       this.updatePlayer();
-      this.checkCrash();
       this.updateScore();
     }, 25);
   }
@@ -47,21 +51,40 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   pipeUpdate(): void {
-    this.bottomPipe++;
+    //Line 1
     this.topPipe++;
+    this.bottomPipe++;
 
-    //Top pipe checker 
+    //Top pipe updater 
     if (this.topPipe == 100) {
       this.topPipe = 1;
     } else {
       document.getElementById('tp1').style.right = (this.topPipe.toString() + '%');
     }
-
-    //Bottom pipe checker 
+    2
+    //Bottom pipe updater 
     if (this.bottomPipe == 100) {
       this.bottomPipe = 1;
     } else {
       document.getElementById('bp1').style.right = (this.bottomPipe.toString() + '%');
+    }
+
+    //Line 2
+    this.topPipe2 = (this.topPipe2 + 0.5);
+    this.bottomPipe2 = (this.bottomPipe2 + 0.5);
+
+    //Top pipe updater 
+    if (this.topPipe2 == 100) {
+      this.topPipe2 = 2;
+    } else {
+      document.getElementById('tp2').style.right = (this.topPipe2.toString() + '%');
+    }
+    2
+    //Bottom pipe updater
+    if (this.bottomPipe2 == 100) {
+      this.bottomPipe2 = 2;
+    } else {
+      document.getElementById('bp2').style.right = (this.bottomPipe2.toString() + '%');
     }
   }
 
@@ -70,18 +93,30 @@ export class FlappyComponent implements OnInit, OnDestroy {
     if (this.playerBottom <= 5) {
       this.playerLose();
     } else
-      //Touch top of game    
+      //Touch top
       if (this.playerBottom >= 100) {
         this.playerLose();
-      } else
-        //Touch top pipe    
-        if (this.topPipe > 70 && this.topPipe < 90 && this.playerBottom > 30) {
-          this.playerLose();
-        } else
-          //Touch bottom pipe    
-          if (this.bottomPipe > 70 && this.bottomPipe < 90 && this.playerBottom < 20) {
-            this.playerLose();
-          }
+      }
+
+    //Line 1
+    //Touch top pipe    
+    if (this.topPipe > 70 && this.topPipe < 90 && this.playerBottom > 30) {
+      this.playerLose();
+    } else
+      //Touch bottom pipe    
+      if (this.bottomPipe > 70 && this.bottomPipe < 90 && this.playerBottom < 20) {
+        this.playerLose();
+      }
+
+    //Line 2
+    //Touch top pipe    
+    if (this.topPipe2 > 70 && this.topPipe2 < 90 && this.playerBottom > 30) {
+      this.playerLose();
+    } else
+      //Touch bottom pipe    
+      if (this.bottomPipe2 > 70 && this.bottomPipe2 < 90 && this.playerBottom < 20) {
+        this.playerLose();
+      }
   }
 
   playerLose(): void {
@@ -99,7 +134,7 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   updatePlayer(): void {
-    this.playerBottom = (this.playerBottom - 0.5);
+    this.playerBottom = (this.playerBottom - 0.4);
     document.getElementById('player').style.bottom = (this.playerBottom.toString() + '%');
   }
 
@@ -113,8 +148,12 @@ export class FlappyComponent implements OnInit, OnDestroy {
     this.playerBottom = 50;
 
     //pipe
+    //Line 1
     this.bottomPipe = 1;
     this.topPipe = 1;
+    //Line 2
+    this.bottomPipe2 = 1;
+    this.topPipe2 = 1;
 
     //Score
     this.score = 0;
