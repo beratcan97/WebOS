@@ -15,6 +15,7 @@ export class FlappyComponent implements OnInit, OnDestroy {
   playerBottom = 50;
 
   //pipe
+  topPipe = 1;
   bottomPipe = 1;
 
   //Score
@@ -33,11 +34,11 @@ export class FlappyComponent implements OnInit, OnDestroy {
     }
 
     this.timer = setInterval(() => {
-      this.tubeUpdate();
+      this.pipeUpdate();
       this.updatePlayer();
       this.checkCrash();
       this.updateScore();
-    }, 100);
+    }, 25);
   }
 
   ngOnDestroy() {
@@ -45,9 +46,18 @@ export class FlappyComponent implements OnInit, OnDestroy {
     this.resetGame();
   }
 
-  tubeUpdate(): void {
+  pipeUpdate(): void {
     this.bottomPipe++;
+    this.topPipe++;
 
+    //Top pipe checker 
+    if (this.topPipe == 100) {
+      this.topPipe = 1;
+    } else {
+      document.getElementById('tp1').style.right = (this.topPipe.toString() + '%');
+    }
+
+    //Bottom pipe checker 
     if (this.bottomPipe == 100) {
       this.bottomPipe = 1;
     } else {
@@ -56,16 +66,25 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   checkCrash(): void {
+    //Touch floor
     if (this.playerBottom <= 5) {
-      //Touch floor
       this.playerLose();
-    } else if (this.bottomPipe > 70 && this.bottomPipe < 90 && this.playerBottom < 20) {
-      //Touch bottom pipe
-      this.playerLose();
-    }
+    } else
+      //Touch top of game    
+      if (this.playerBottom >= 100) {
+        this.playerLose();
+      } else
+        //Touch top pipe    
+        if (this.topPipe > 70 && this.topPipe < 90 && this.playerBottom > 30) {
+          this.playerLose();
+        } else
+          //Touch bottom pipe    
+          if (this.bottomPipe > 70 && this.bottomPipe < 90 && this.playerBottom < 20) {
+            this.playerLose();
+          }
   }
 
-  playerLose() {
+  playerLose(): void {
     alert('You lose');
     this.resetGame();
   }
@@ -80,7 +99,7 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   updatePlayer(): void {
-    this.playerBottom--;
+    this.playerBottom = (this.playerBottom - 0.5);
     document.getElementById('player').style.bottom = (this.playerBottom.toString() + '%');
   }
 
@@ -89,12 +108,13 @@ export class FlappyComponent implements OnInit, OnDestroy {
     document.getElementById('player').style.bottom = (this.playerBottom.toString() + '%');
   }
 
-  resetGame() {
+  resetGame(): void {
     //Player
     this.playerBottom = 50;
 
     //pipe
     this.bottomPipe = 1;
+    this.topPipe = 1;
 
     //Score
     this.score = 0;
