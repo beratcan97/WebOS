@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class AppsLogosComponent implements OnInit {
 
   device = localStorage.getItem('device');
+  phoneWidth: boolean;
 
   constructor() { }
 
   ngOnInit() {
+    if (this.device == 'Desktop'){
+      this.phoneWidth = true;
+    }
   }
-
 }
