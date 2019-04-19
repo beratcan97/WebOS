@@ -101,20 +101,24 @@ export class FlappyComponent implements OnInit, OnDestroy {
     //Line 1
     //Touch top pipe    
     if (this.topPipe > 70 && this.topPipe < 90 && this.playerBottom > 30) {
+      console.log("line 1 top");
       this.playerLose();
     } else
       //Touch bottom pipe    
       if (this.bottomPipe > 70 && this.bottomPipe < 90 && this.playerBottom < 20) {
+        console.log("line 1 bottom");
         this.playerLose();
       }
 
     //Line 2
     //Touch top pipe    
-    if (this.topPipe2 > 70 && this.topPipe2 < 90 && this.playerBottom > 30) {
+    if (this.topPipe2 > 70 && this.topPipe2 < 90 && this.playerBottom > 50) {
+      console.log("line 2 top");
       this.playerLose();
     } else
       //Touch bottom pipe    
-      if (this.bottomPipe2 > 70 && this.bottomPipe2 < 90 && this.playerBottom < 20) {
+      if (this.bottomPipe2 > 70 && this.bottomPipe2 < 90 && this.playerBottom < 40) {
+        console.log("line 2 bottom");
         this.playerLose();
       }
   }
