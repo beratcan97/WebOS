@@ -19,8 +19,8 @@ export class FlappyComponent implements OnInit, OnDestroy {
   topPipe = 1;
   bottomPipe = 1;
   //Line 2
-  topPipe2 = 1;
-  bottomPipe2 = 1;
+  topPipe2 = 50;
+  bottomPipe2 = 50;
 
   //Score
   highScore: number = parseInt(localStorage.getItem('flappyGameHighScore'));
@@ -70,8 +70,8 @@ export class FlappyComponent implements OnInit, OnDestroy {
     }
 
     //Line 2
-    this.topPipe2 = (this.topPipe2 + 0.5);
-    this.bottomPipe2 = (this.bottomPipe2 + 0.5);
+    this.topPipe2++;
+    this.bottomPipe2++;
 
     //Top pipe updater 
     if (this.topPipe2 == 100) {
