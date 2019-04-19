@@ -13,7 +13,7 @@ export class AppsLogosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (this.device == 'Desktop'){
+    if (this.device == 'Phone') {
       this.phoneWidth = true;
     }
   }
