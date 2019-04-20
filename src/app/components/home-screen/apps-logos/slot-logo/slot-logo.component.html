@@ -1,18 +1,18 @@
 <div (click)="navigate()">
-    <img src="assets/images/apps-logos/slotmachine.gif" alt="slotmachine icon" class="app">
-    <div class="d-flex justify-content-center">
-      <p>
-        <ng-container *ngIf="lang == 'sv-SE';else second">
-          Spelautomat
+  <img src="assets/images/apps-logos/slotmachine.gif" alt="slotmachine icon" class="app">
+  <div class="d-flex justify-content-center">
+    <p>
+      <ng-container *ngIf="lang == 'sv-SE';else second">
+        Automat
+      </ng-container>
+      <ng-template #second>
+        <ng-container *ngIf="lang == 'tr-TR';else third">
+          Slot makinasi
         </ng-container>
-        <ng-template #second>
-          <ng-container *ngIf="lang == 'tr-TR';else third">
-            Slot makinasi
-          </ng-container>
-        </ng-template>
-        <ng-template #third>
-          Slots
-        </ng-template>
-      </p>
-    </div>
+      </ng-template>
+      <ng-template #third>
+        Slots
+      </ng-template>
+    </p>
   </div>
+</div>
