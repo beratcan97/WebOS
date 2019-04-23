@@ -8,7 +8,7 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/co
 export class FlappyComponent implements OnInit, OnDestroy {
 
   lang = window.navigator.language;
-  gameRunning: boolean = true;
+  gameRunning: boolean = false;
 
 
   //Player
@@ -38,10 +38,12 @@ export class FlappyComponent implements OnInit, OnDestroy {
     }
 
     this.timer = setInterval(() => {
-      this.checkCrash();
-      this.pipeUpdate();
-      this.updatePlayer();
-      this.updateScore();
+      if (this.gameRunning) {
+        this.checkCrash();
+        this.pipeUpdate();
+        this.updatePlayer();
+        this.updateScore();
+      }
     }, 25);
   }
 
@@ -124,7 +126,7 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   playerLose(): void {
-    alert('You lose');
+    this.gameRunning = false;
     this.resetGame();
   }
 

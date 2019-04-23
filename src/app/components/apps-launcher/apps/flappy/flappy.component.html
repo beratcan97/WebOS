@@ -4,7 +4,7 @@
     <div class="d-flex flex-column justify-content-center" *ngIf="!gameRunning">
         <ng-container *ngIf="lang == 'sv-SE';else second">
             <p class="text-white">Din högsta poäng: {{highScore}}</p>
-            <button class="btn btn-primary" (click)="createGameArea()">Starta</button>
+            <button class="btn btn-primary" (click)="this.gameRunning = true">Starta</button>
         </ng-container>
         <ng-template #second>
             <ng-container *ngIf="lang == 'tr-TR';else third">
@@ -31,10 +31,6 @@
             <!--    Line 2  -->
             <img src="assets/images/apps/flappy/top-pipe.png" id="tp2" class="topPipe2">
             <img src="assets/images/apps/flappy/bottom-pipe.png" id="bp2" class="bottomPipe2">
-
-            <!--    Line 3  --
-            <img src="assets/images/apps/flappy/top-pipe.png" id="tp2" class="topPipe3">
-            <img src="assets/images/apps/flappy/bottom-pipe.png" id="bp2" class="bottomPipe2">-->
 
             <img src="assets/images/apps/flappy/cloud.gif" class="cloud">
             <img src="assets/images/apps/flappy/bricks.jpg" class="bottomBrick">
