@@ -26,6 +26,7 @@ import { NotesLogoComponent } from './components/home-screen/apps-logos/notes-lo
 import { CpmLogoComponent } from './components/home-screen/apps-logos/cpm-logo/cpm-logo.component';
 import { DualWebLogoComponent } from './components/home-screen/apps-logos/dual-web-logo/dual-web-logo.component';
 import { FlappyLogoComponent } from './components/home-screen/apps-logos/flappy-logo/flappy-logo.component';
+import { MapsLogoComponent } from './components/home-screen/apps-logos/maps-logo/maps-logo.component';
 
 //APPS
 import { NewsComponent } from './components/apps-launcher/apps/news/news.component';
@@ -42,6 +43,7 @@ import { NotesComponent } from './components/apps-launcher/apps/notes/notes.comp
 import { CpmComponent } from './components/apps-launcher/apps/cpm/cpm.component';
 import { DualWebComponent } from './components/apps-launcher/apps/dual-web/dual-web.component';
 import { FlappyComponent } from './components/apps-launcher/apps/flappy/flappy.component';
+import { MapsComponent } from './components/apps-launcher/apps/maps/maps.component';
 
 //Settings
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
@@ -65,6 +67,8 @@ const appRoutes: Routes = [
   { path: 'cpm', component: CpmComponent },
   { path: 'dualWeb', component: DualWebComponent },
   { path: 'flappy', component: FlappyComponent },
+  { path: 'maps', component: MapsComponent },
+
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
   { path: 'about', component: AboutComponent },
@@ -92,6 +96,7 @@ const appRoutes: Routes = [
     CpmLogoComponent,
     DualWebLogoComponent,
     FlappyLogoComponent,
+    MapsLogoComponent,
 
     // APPS
     NewsComponent,
@@ -109,6 +114,7 @@ const appRoutes: Routes = [
     CpmComponent,
     DualWebComponent,
     FlappyComponent,
+    MapsComponent,
 
     //Settings
     WallpaperComponent,

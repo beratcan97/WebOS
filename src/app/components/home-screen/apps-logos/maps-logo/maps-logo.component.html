@@ -1,0 +1,19 @@
+<div (click)="navigate()">
+  <img src="assets/images/apps-logos/maps.gif" alt="maps icon" class="app">
+  <div class="d-flex justify-content-center">
+
+    <p>
+      <ng-container *ngIf="lang == 'sv-SE';else second">
+        Karta
+      </ng-container>
+      <ng-template #second>
+        <ng-container *ngIf="lang == 'tr-TR';else third">
+          Harita
+        </ng-container>
+      </ng-template>
+      <ng-template #third>
+        Maps
+      </ng-template>
+    </p>
+  </div>
+</div>
