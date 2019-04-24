@@ -8,7 +8,7 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/co
 export class FlappyComponent implements OnInit, OnDestroy {
 
   lang = window.navigator.language;
-  gameRunning: boolean = false;
+  gameRunning: boolean = true;
 
 
   //Player
