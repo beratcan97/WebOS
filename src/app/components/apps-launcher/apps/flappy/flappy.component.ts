@@ -126,7 +126,6 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   playerLose(): void {
-    this.gameRunning = false;
     this.resetGame();
   }
 
