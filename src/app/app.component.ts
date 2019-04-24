@@ -14,9 +14,9 @@ export class AppComponent {
   constructor(private weatherAPIService: WeatherAPIService) { }
 
   ngOnInit() {
-    this.delay(3000).then(any => {
+    setTimeout(any => {
       this.isLoaded = true;
-    });
+    }, 3000);
 
     this.weatherAPIService.getWeather().subscribe();
 
@@ -25,7 +25,7 @@ export class AppComponent {
       //device
       localStorage.setItem('device', this.getDevice());
       //wallpaper
-      localStorage.setItem('wallpaper', 'lightblue');
+      localStorage.setItem('wallpaper', 'blueviolet');
     }
   }
 
@@ -36,9 +36,5 @@ export class AppComponent {
     else {
       return 'Desktop';
     }
-  }
-
-  async delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }

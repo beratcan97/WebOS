@@ -1,11 +1,10 @@
-<div (click)="navigate()" class="app">
-
-  <img src="assets/images/apps-logos/notes.gif" alt="Notes icon" class="app">
+<div (click)="navigate()">
+  <img src="assets/images/apps-logos/notes.gif" alt="Notes icon" class="appLogo">
 
   <div class="d-flex justify-content-center">
-    <p>
+    <p class="appName">
       <ng-container *ngIf="lang == 'sv-SE';else second">
-        Anteck..
+        Anteckningar
       </ng-container>
       <ng-template #second>
         <ng-container *ngIf="lang == 'tr-TR';else third">

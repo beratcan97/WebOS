@@ -1,9 +1,10 @@
 <div (click)="navigate()">
-  <img src="assets/images/apps-logos/cardGenerator.gif" alt="card generator icon" class="app">
+
+  <img src="assets/images/apps-logos/cardGenerator.gif" alt="card generator icon" class="appLogo">
 
   <div class="d-flex justify-content-center">
 
-    <p>
+    <p class="appName">
       <ng-container *ngIf="lang == 'sv-SE';else second">
         Kort gen
       </ng-container>

@@ -1,17 +1,17 @@
-<div (click)="navigate()" class="app">
+<div (click)="navigate()">
 
   <ng-container *ngIf="weatherData">
     <img src="https://openweathermap.org/img/w/{{weatherData.list[0].weather[0].icon}}.png"
-      alt="{{weatherData.list[0].weather[0].description}}" class="app">
+      alt="{{weatherData.list[0].weather[0].description}}" class="appLogo">
   </ng-container>
 
   <ng-container *ngIf="!weatherData">
-    <img src="assets/images/apps-logos/weather.gif" alt="weather icon" class="app">
+    <img src="assets/images/apps-logos/weather.gif" alt="weather icon" class="appLogo">
   </ng-container>
 
   <div class="d-flex justify-content-center">
 
-    <p>
+    <p class="appName">
       <ng-container *ngIf="lang == 'sv-SE';else second">
         Väder
       </ng-container>

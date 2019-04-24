@@ -3,10 +3,15 @@ body {
     -webkit-user-select: none;
  }
 
-.app {
+.appLogo {
     width: 70px;
     height: 70px;
     border-radius: 10px;
+}
+
+.appName {
+    font-family: 'Great Vibes', cursive;
+    color: whitesmoke;
 }
 
 .fullScreen {
