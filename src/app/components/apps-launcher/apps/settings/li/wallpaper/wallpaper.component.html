@@ -4,7 +4,7 @@
   <div>
     <p>Current color: {{currentColor}}</p>
     <ng-container *ngFor="let color of colors">
-      <li class="iosStyleListItem" (click)="localStorage(color)">{{color}}</li>
+      <li class="iosStyleListItem" id="{{color}}id" (click)="localStorage(color)">{{color}}</li>
     </ng-container>
   </div>
 </div>

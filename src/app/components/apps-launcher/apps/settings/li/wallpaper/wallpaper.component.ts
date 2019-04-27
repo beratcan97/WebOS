@@ -14,6 +14,11 @@ export class WallpaperComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    setTimeout(any => {
+      this.colors.forEach(color => {
+        document.getElementById(color + 'id').style.color = color;
+      });
+    }, 1);
   }
 
   localStorage(color) {
