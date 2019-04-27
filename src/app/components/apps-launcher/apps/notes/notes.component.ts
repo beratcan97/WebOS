@@ -20,6 +20,9 @@ export class NotesComponent implements OnInit {
       notes: '',
     })
 
+    var textarea = document.querySelector('textarea');
+
+    textarea.addEventListener('keydown', autosize);
 
     if (localStorage.getItem('note')) {
       this.notesForm.get('notes').patchValue(localStorage.getItem('note'));
@@ -29,4 +32,15 @@ export class NotesComponent implements OnInit {
   saveNote() {
     localStorage.setItem('note', this.notesForm.value.notes);
   }
+}
+
+
+function autosize() {
+  var el = this;
+  setTimeout(function () {
+    el.style.cssText = 'height:auto; padding:0';
+    // for box-sizing other than "content-box" use:
+    // el.style.cssText = '-moz-box-sizing:content-box';
+    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+  }, 0);
 }

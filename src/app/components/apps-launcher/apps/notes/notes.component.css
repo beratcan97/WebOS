@@ -1,0 +1,7 @@
+.notesTextarea {
+    width: 100%;
+    background-color: papayawhip;
+    border: 0;
+    resize: none;
+    outline: none;
+}

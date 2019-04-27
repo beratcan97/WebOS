@@ -19,7 +19,8 @@
     </ng-template>
 
     <form [formGroup]="notesForm">
-      <textarea class="form-control w-100" rows="5" id="notes" formControlName="notes" (change)="saveNote()"></textarea>
+      <textarea class="notesTextarea" id="notes" formControlName="notes" (change)="saveNote()"
+        placeholder="..."></textarea>
     </form>
   </div>
 </div>
