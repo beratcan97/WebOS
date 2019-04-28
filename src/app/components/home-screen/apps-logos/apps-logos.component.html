@@ -1,53 +1,28 @@
-<div class="d-flex flex-wrap justify-content-start pt-2" [ngClass]="{'mw': phoneWidth}">
-    <div class="mx-2">
+<div class="pt-3" [ngClass]="{'mw': phoneWidth}">
+
+    <div class="d-flex justify-content-between vh-100-width">
         <app-news-logo></app-news-logo>
-    </div>
-    <div class="mx-2">
         <app-stocks-logo></app-stocks-logo>
-    </div>
-    <div class="mx-2">
         <app-settings-logo></app-settings-logo>
-    </div>
-    <div class="mx-2">
         <app-weather-logo></app-weather-logo>
     </div>
-    <div class="mx-2">
+    <div class="d-flex justify-content-between vh-100-width">
         <app-counter-logo></app-counter-logo>
-    </div>
-    <div class="mx-2">
         <app-clock-logo></app-clock-logo>
-    </div>
-    <div class="mx-2">
         <app-calculator-logo></app-calculator-logo>
-    </div>
-    <div class="mx-2">
         <app-card-generator-logo></app-card-generator-logo>
     </div>
-    <div class="mx-2">
+    <div class="d-flex justify-content-between vh-100-width">
         <app-slot-logo></app-slot-logo>
-    </div>
-    <div class="mx-2">
         <app-notes-logo></app-notes-logo>
-    </div>
-    <div class="mx-2">
         <app-cpm-logo></app-cpm-logo>
-    </div>
-
-    <div class="mx-2">
         <app-dual-web-logo></app-dual-web-logo>
     </div>
-
-    <div class="mx-2">
+    <div class="d-flex justify-content-between vh-100-width">
         <app-flappy-logo></app-flappy-logo>
-    </div>
-
-    <div class="mx-2">
         <app-maps-logo></app-maps-logo>
-    </div>
-
-    <ng-container *ngIf="device == 'Desktop'">
-        <div class="mx-2">
+        <ng-container *ngIf="device == 'Desktop'">
             <app-tv-logo></app-tv-logo>
-        </div>
-    </ng-container>
+        </ng-container>
+    </div>
 </div>
