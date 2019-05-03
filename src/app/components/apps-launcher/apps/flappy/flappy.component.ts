@@ -144,7 +144,12 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   onScreenClick(): void {
-    this.playerBottom = this.playerBottom + 5;
+    let newPos = this.playerBottom + 5;
+
+    while (this.playerBottom < newPos) {
+      console.log(this.playerBottom);
+      this.playerBottom++;
+    }
     document.getElementById('player').style.bottom = (this.playerBottom.toString() + '%');
   }
 
