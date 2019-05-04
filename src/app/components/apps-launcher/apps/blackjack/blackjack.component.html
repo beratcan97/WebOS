@@ -1,0 +1,22 @@
+<app-apps-launcher></app-apps-launcher>
+
+<div class="d-flex justify-content-between flex-column vh-100-height container">
+  <!--  Dealer cards  -->
+  <div class="d-flex flex-row">
+    <ng-container *ngFor="let card of dealerCards; let i = index">
+      <img id="{{i}}" class="card" src="assets/images/apps/blackjack/cards/{{card}}.svg">
+    </ng-container>
+    <p>{{dealerValue}}</p>
+  </div>
+
+  <button (click)="stand()">Stand</button>
+  <button (click)="hit()">Hit</button>
+
+  <!--  Player cards  -->
+  <div class="d-flex flex-row mb-5">
+    <ng-container *ngFor="let card of playerCards; let i = index">
+      <img id="{{i}}" class="card" src="assets/images/apps/blackjack/cards/{{card}}.svg">
+    </ng-container>
+    <p>{{playerValue}}</p>
+  </div>
+</div>
