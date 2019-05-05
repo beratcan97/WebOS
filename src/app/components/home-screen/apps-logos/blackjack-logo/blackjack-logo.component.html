@@ -1,0 +1,19 @@
+<div (click)="navigate()">
+  <img src="assets/images/apps-logos/blackjack.gif" alt="calculator icon" class="appLogo">
+
+  <div class="d-flex justify-content-center">
+    <p class="appName">
+      <ng-container *ngIf="lang == 'sv-SE';else second">
+        Blackjack
+      </ng-container>
+      <ng-template #second>
+        <ng-container *ngIf="lang == 'tr-TR';else third">
+          Blackjack
+        </ng-container>
+      </ng-template>
+      <ng-template #third>
+        Blackjack
+      </ng-template>
+    </p>
+  </div>
+</div>
