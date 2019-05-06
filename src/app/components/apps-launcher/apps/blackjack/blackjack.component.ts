@@ -12,13 +12,14 @@ export class BlackjackComponent implements OnInit {
   dealerCards = [];
   playerCards = [];
 
+  message: string = '';
+  gameRunning = false;
+
   playerValue: number = 0;
   dealerValue: number = 0;
   constructor() { }
 
   ngOnInit() {
-    this.startNewGame();
-    this.gameupdater();
   }
 
   gameupdater(): void {
@@ -26,20 +27,35 @@ export class BlackjackComponent implements OnInit {
     this.checkBlackjackAndBust();
   }
 
+  hit(): void {
+    this.playerCards.push(this.randomCard(1)[0]);
+
+    this.gameupdater();
+  }
+
   stand(): void {
-    this.checkTheWinner();
+    // Dealers move
+    while (this.dealerValue < this.playerValue) {
+      this.dealerCards.push(this.randomCard(1)[0]);
+      this.playerAndDealerCardsValueCount();
+    }
+
+    if (this.dealerValue === this.playerValue) {
+      this.endGame('Nobody wins, same!');
+    } else if (this.dealerValue > 21) {
+      this.endGame('You win, Dealer bust!');
+    } else {
+      this.endGame('You lose!');
+    }
   }
 
   checkTheWinner(): void {
     if (this.playerValue === this.dealerValue) {
-      alert('same');
-      this.restartGame();
+      this.endGame('Nobody wins, same!');
     } else if (this.playerValue > this.dealerValue) {
-      alert('playerWins');
-      this.restartGame();
+      this.endGame('You win!');
     } else {
-      alert('DealerWins');
-      this.restartGame();
+      this.endGame('You lose!');
     }
   }
 
@@ -58,20 +74,16 @@ export class BlackjackComponent implements OnInit {
   checkBlackjackAndBust(): void {
     //Check player
     if (this.playerValue == 21) {
-      alert('blackJack');
-      this.restartGame();
+      this.endGame('You win, BlackJack!');
     } else if (this.playerValue > 21) {
-      alert('bust');
-      this.restartGame();
+      this.endGame('You lose, Bust!');
     }
 
     //Check dealer
     if (this.dealerValue == 21) {
-      alert('Dealer blackJack');
-      this.restartGame();
+      this.endGame('You lose, Dealer BlackJack!');
     } else if (this.dealerValue > 21) {
-      alert('Dealer bust');
-      this.restartGame();
+      this.endGame('You win, Dealer bust!');
     }
   }
 
@@ -87,6 +99,11 @@ export class BlackjackComponent implements OnInit {
       tmpDealer = (tmpDealer + this.cardsValueCounter(card));
     });
     this.dealerValue = tmpDealer;
+  }
+
+  endGame(message): void {
+    this.message = message;
+    this.gameRunning = false;
   }
 
   cardsValueCounter(index: number): number {
@@ -117,15 +134,12 @@ export class BlackjackComponent implements OnInit {
     return toatelValue;
   }
 
-  hit(): void {
-    this.playerCards.push(this.randomCard(1)[0]);
-
-    this.gameupdater();
-  }
-
   startNewGame(): void {
+    this.gameRunning = true;
+    this.message = '';
     this.dealerCards = this.randomCard(2);
     this.playerCards = this.randomCard(2);
+    this.gameupdater();
   }
 
   randomCard(number) {

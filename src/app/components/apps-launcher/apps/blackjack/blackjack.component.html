@@ -10,8 +10,19 @@
   </div>
 
   <div>
-    <button (click)="stand()">Stand</button>
-    <button (click)="hit()">Hit</button>
+    <ng-container *ngIf="!gameRunning && !message">
+      <button (click)="startNewGame()">Start game</button>
+    </ng-container>
+    <ng-container *ngIf="!gameRunning && message">
+      <button (click)="restartGame()">Restart game</button>
+    </ng-container>
+    <ng-container *ngIf="gameRunning">
+      <button (click)="stand()">Stand</button>
+      <button (click)="hit()">Hit</button>
+    </ng-container>
+    <div>
+      <p>{{message}}</p>
+    </div>
   </div>
 
   <!--  Player cards  -->
