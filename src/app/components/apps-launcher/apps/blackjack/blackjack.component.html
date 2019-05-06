@@ -2,31 +2,35 @@
 
 <div class="d-flex justify-content-between flex-column vh-100-height container">
   <!--  Dealer cards  -->
-  <div class="d-flex flex-row">
+  <div class="d-flex flex-row justify-content-center mt-5">
     <ng-container *ngFor="let card of dealerCards; let i = index">
       <img id="{{i}}" class="card" src="assets/images/apps/blackjack/cards/{{card}}.svg">
     </ng-container>
     <p>{{dealerValue}}</p>
   </div>
 
-  <div>
-    <ng-container *ngIf="!gameRunning && !message">
-      <button (click)="startNewGame()">Start game</button>
-    </ng-container>
-    <ng-container *ngIf="!gameRunning && message">
-      <button (click)="restartGame()">Restart game</button>
-    </ng-container>
-    <ng-container *ngIf="gameRunning">
-      <button (click)="stand()">Stand</button>
-      <button (click)="hit()">Hit</button>
-    </ng-container>
-    <div>
-      <p>{{message}}</p>
+  <div class="d-flex justify-content-center">
+    <div class="d-flex flex-column">
+      <div>
+        <ng-container *ngIf="!gameRunning && !message">
+          <button type="button" class="btn btn-primary" (click)="startNewGame()">Start game</button>
+        </ng-container>
+        <ng-container *ngIf="!gameRunning && message">
+          <img (click)="restartGame()" class="control" src="assets/images/apps/blackjack/gameOver.gif">
+        </ng-container>
+        <ng-container *ngIf="gameRunning">
+          <img (click)="stand()" class="control" src="assets/images/apps/blackjack/stand.png">
+          <img (click)="hit()" class="control" src="assets/images/apps/blackjack/hit.png">
+        </ng-container>
+      </div>
+      <div>
+        <h1>{{message}}</h1>
+      </div>
     </div>
   </div>
 
   <!--  Player cards  -->
-  <div class="d-flex flex-row mb-5">
+  <div class="d-flex justify-content-center flex-row mb-5">
     <ng-container *ngFor="let card of playerCards; let i = index">
       <img id="{{i}}" class="card" src="assets/images/apps/blackjack/cards/{{card}}.svg">
     </ng-container>
