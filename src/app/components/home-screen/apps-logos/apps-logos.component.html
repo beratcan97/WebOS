@@ -1,37 +1,62 @@
 <div class="pt-3" [ngClass]="{'mw': phoneWidth}">
 
-    <div class="d-flex flex-row justify-content-between">
-        <div class="w-25">
+
+    <div class="row m-3">
+        <div class="col-3 d-flex justify-content-center">
             <app-news-logo></app-news-logo>
         </div>
-        <div class="w-25">
+        <div class="col-3 d-flex justify-content-center">
             <app-stocks-logo></app-stocks-logo>
         </div>
-        <div class="w-25">
+        <div class="col-3 d-flex justify-content-center">
             <app-settings-logo></app-settings-logo>
         </div>
-        <div class="w-25">
+        <div class="col-3 d-flex justify-content-center">
             <app-weather-logo></app-weather-logo>
         </div>
     </div>
-    <div class="d-flex flex-row justify-content-between ">
-        <app-counter-logo></app-counter-logo>
-        <app-clock-logo></app-clock-logo>
-        <app-calculator-logo></app-calculator-logo>
-        <app-card-generator-logo></app-card-generator-logo>
+    <div class="row m-3">
+        <div class="col-3 d-flex justify-content-center">
+            <app-counter-logo></app-counter-logo>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <app-clock-logo></app-clock-logo>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <app-calculator-logo></app-calculator-logo>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <app-card-generator-logo></app-card-generator-logo>
+        </div>
     </div>
-    <div class="d-flex flex-row justify-content-between ">
-        <app-slot-logo></app-slot-logo>
-        <app-notes-logo></app-notes-logo>
-        <app-cpm-logo></app-cpm-logo>
-        <app-dual-web-logo></app-dual-web-logo>
+    <div class="row m-3">
+        <div class="col-3 d-flex justify-content-center">
+            <app-slot-logo></app-slot-logo>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <app-notes-logo></app-notes-logo>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <app-cpm-logo></app-cpm-logo>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <app-dual-web-logo></app-dual-web-logo>
+        </div>
     </div>
-    <div class="d-flex flex-row justify-content-between ">
-        <app-flappy-logo></app-flappy-logo>
-        <app-blackjack-logo></app-blackjack-logo>
-        <app-maps-logo></app-maps-logo>
-        <ng-container *ngIf="device == 'Desktop'">
-            <app-tv-logo></app-tv-logo>
-        </ng-container>
+    <div class="row m-3">
+        <div class="col-3 d-flex justify-content-center">
+            <app-flappy-logo></app-flappy-logo>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <app-blackjack-logo></app-blackjack-logo>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <app-maps-logo></app-maps-logo>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <ng-container *ngIf="device == 'Desktop'">
+                <app-tv-logo></app-tv-logo>
+            </ng-container>
+        </div>
     </div>
 </div>
