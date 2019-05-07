@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlackjackComponent implements OnInit {
 
+  isLoaded = false;
+
   //Cards
   cards = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52'];
   dealerCards = [];
@@ -14,12 +16,14 @@ export class BlackjackComponent implements OnInit {
 
   message: string = '';
   gameRunning = false;
+  dealersTurn = false;
 
   playerValue: number = 0;
   dealerValue: number = 0;
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => { this.isLoaded = true }, 3000)
   }
 
   gameupdater(): void {
@@ -34,6 +38,8 @@ export class BlackjackComponent implements OnInit {
   }
 
   stand(): void {
+    this.dealersTurn = true;
+
     // Dealers move
     while (this.dealerValue < this.playerValue) {
       this.dealerCards.push(this.randomCard(1)[0]);
@@ -64,6 +70,7 @@ export class BlackjackComponent implements OnInit {
     this.dealerCards = [];
     this.playerCards = [];
 
+    this.dealersTurn = false;
     this.playerValue = 0;
     this.dealerValue = 0;
 

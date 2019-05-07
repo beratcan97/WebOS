@@ -17,19 +17,13 @@ export class CardGeneratorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.delay(3000).then(any => {
-      this.isLoaded = true;
-    });
+    setTimeout(() => { this.isLoaded = true }, 3000)
 
     this.generateCard();
   }
 
-  async delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   generateCard(): void {
 
-  this.cardNumber = this.masterCards[Math.floor(Math.random() * 11)];
+    this.cardNumber = this.masterCards[Math.floor(Math.random() * 11)];
   }
 }
