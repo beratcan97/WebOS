@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WeatherAPIService } from './services/weather-api.service';
+import { StocksApiService } from './services/stocks-api.service';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,16 @@ export class AppComponent {
   isInstalled: boolean = false;
   isLoaded: boolean = false;
 
-  constructor(private weatherAPIService: WeatherAPIService) { }
+  constructor(
+    private weatherAPIService: WeatherAPIService,
+    private stocksApiService: StocksApiService) { }
 
   ngOnInit() {
     setTimeout(any => {
       this.isLoaded = true;
     }, 3000);
 
+    // Get external DATA
     this.weatherAPIService.getWeather().subscribe();
 
     //localStorage
