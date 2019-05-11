@@ -10,6 +10,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FlappyHighScoreComponent implements OnInit {
 
+  lang = window.navigator.language;
+
   nameForm: FormGroup;
   username: string = localStorage.getItem('username');
   usernameExist = false;

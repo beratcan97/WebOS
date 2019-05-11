@@ -4,18 +4,54 @@
     <ng-container *ngIf="usernameExist; else usernameAddScreen">
         <h1 class="text-white">Welcome {{username}}</h1>
         <button type="button" class="btn btn-success" (click)="navigate()">PLAY!</button>
-        <div class="d-flex" *ngFor="let advertisement of scoreBoard">
-            <p class="text-white">{{advertisement.name}}</p>
-            <p class="text-white">{{advertisement.score}}</p>
+        <div class="d-flex">
+            <table class="table table-striped bg-success mt-3">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Scores of scoreBoard; let i = index">
+                        <th scope="row">{{i}}</th>
+                        <td class="text-white">{{Scores.name}}</td>
+                        <td class="text-white">{{Scores.score}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </ng-container>
     <ng-template #usernameAddScreen>
-        <form [formGroup]="nameForm">
-            <div class="form-group">
-                <label for="name">Namn</label>
-                <input type="text" class="form-control" id="name" placeholder="Namn" formControlName="name">
-            </div>
-        </form>
-        <button type="button" class="btn btn-success" (click)="saveName()">Save</button>
+        <ng-container *ngIf="lang == 'sv-SE';else second">
+            <form [formGroup]="nameForm">
+                <div class="form-group">
+                    <label for="name" class="text-white">Namn</label>
+                    <input type="text" class="form-control" id="name" placeholder="Namn" formControlName="name">
+                </div>
+            </form>
+            <button type="button" class="btn btn-success" (click)="saveName()">Save</button>
+        </ng-container>
+        <ng-template #second>
+            <ng-container *ngIf="lang == 'tr-TR';else third">
+                <form [formGroup]="nameForm">
+                    <div class="form-group">
+                        <label for="name" class="text-white">isim</label>
+                        <input type="text" class="form-control" id="name" placeholder="isim" formControlName="name">
+                    </div>
+                </form>
+                <button type="button" class="btn btn-success" (click)="saveName()">Save</button>
+            </ng-container>
+        </ng-template>
+        <ng-template #third>
+            <form [formGroup]="nameForm">
+                <div class="form-group">
+                    <label for="name" class="text-white">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+                </div>
+            </form>
+            <button type="button" class="btn btn-success" (click)="saveName()">Save</button>
+        </ng-template>
     </ng-template>
 </div>
