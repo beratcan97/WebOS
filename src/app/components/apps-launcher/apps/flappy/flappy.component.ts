@@ -9,6 +9,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class FlappyComponent implements OnInit, OnDestroy {
 
   lang = window.navigator.language;
+  dateDATA = new Date();
 
   //Player
   playerBottom = 50;
@@ -52,7 +53,8 @@ export class FlappyComponent implements OnInit, OnDestroy {
   publish(highScore) {
     this.firestore.collection('flappyHighScore').add({
       'score': highScore,
-      'name': localStorage.getItem('username')
+      'name': localStorage.getItem('username'),
+      'date': this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
     })
       .then(
         res => {
