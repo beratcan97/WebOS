@@ -9,8 +9,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class FlappyComponent implements OnInit, OnDestroy {
 
   lang = window.navigator.language;
-  gameRunning: boolean = true;
-
 
   //Player
   playerBottom = 50;
@@ -39,12 +37,10 @@ export class FlappyComponent implements OnInit, OnDestroy {
     }
 
     this.timer = setInterval(() => {
-      if (this.gameRunning) {
-        this.checkCrash();
-        this.pipeUpdate();
-        this.updatePlayer();
-        this.updateScore();
-      }
+      this.checkCrash();
+      this.pipeUpdate();
+      this.updatePlayer();
+      this.updateScore();
     }, 25);
   }
 

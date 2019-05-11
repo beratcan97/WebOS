@@ -1,61 +1,19 @@
 <app-apps-launcher></app-apps-launcher>
 <div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-primary"
     (click)="onScreenClick()">
-    <div class="d-flex flex-column justify-content-center" *ngIf="!gameRunning">
-        <ng-container *ngIf="lang == 'sv-SE';else second">
-            <p class="text-white">Din högsta poäng: {{highScore}}</p>
-            <button class="btn btn-primary" (click)="this.gameRunning = true">Starta</button>
-        </ng-container>
-        <ng-template #second>
-            <ng-container *ngIf="lang == 'tr-TR';else third">
-                <p class="text-white">Senin enyüksek puanın: {{highScore}}</p>
-                <button class="btn btn-primary">Başlat</button>
-            </ng-container>
-        </ng-template>
-        <ng-template #third>
-            <p class="text-white">Your high score: {{highScore}}</p>
-            <button class="btn btn-primary">Start</button>
-        </ng-template>
-    </div>
+    <div class="d-flex flex-column justify-content-center">
+        <h1 class="text-white">HighScore: <img src="assets/images/apps/flappy/coin.gif">{{highScore}}</h1>
+        <h1 class="text-white">Score: <img src="assets/images/apps/flappy/coin.gif">{{score}}</h1>
+        <img src="assets/images/apps/flappy/player.gif" id="player" class="player">
 
-    <div *ngIf="gameRunning">
-        <div class="d-flex flex-column justify-content-center">
-            <h1 class="text-white">HighScore: {{highScore}}</h1>
-            <h1 class="text-white">Score: {{score}}</h1>
-            <img src="assets/images/apps/flappy/player.gif" id="player" class="player">
+        <!--    Line 1  -->
+        <div id="tp1" class="topPipe"></div>
+        <div id="bp1" class="bottomPipe"></div>
+        <!--    Line 2  -->
+        <div id="tp2" class="topPipe2"></div>
+        <div id="bp2" class="bottomPipe2"></div>
 
-            <!--    Line 1  -->
-            <img src="assets/images/apps/flappy/top-pipe.png" id="tp1" class="topPipe">
-            <img src="assets/images/apps/flappy/bottom-pipe.png" id="bp1" class="bottomPipe">
-
-            <!--    Line 2  -->
-            <img src="assets/images/apps/flappy/top-pipe.png" id="tp2" class="topPipe2">
-            <img src="assets/images/apps/flappy/bottom-pipe.png" id="bp2" class="bottomPipe2">
-
-            <img src="assets/images/apps/flappy/cloud.gif" class="cloud">
-            <img src="assets/images/apps/flappy/bricks.jpg" class="bottomBrick">
-        </div>
-        <!--
-        <ng-template #gameEnds>
-            <div class="d-flex flex-column justify-content-center">
-                <ng-container *ngIf="lang == 'sv-SE';else second">
-                    <p class="text-white">Din högsta poäng: {{highScore}}</p>
-                    <p class="text-white">Din poäng:</p>
-                    <button class="btn btn-primary mt-5" (click)="restartGame();">Starta om!</button>
-                </ng-container>
-                <ng-template #second>
-                    <ng-container *ngIf="lang == 'tr-TR';else third">
-                        <p class="text-white">Senin enyüksek puanın: {{highScore}}</p>
-                        <p class="text-white">Senin puanın:</p>
-                        <button class="btn btn-primary mt-5" (click)="restartGame();">Tekrar başlat!</button>
-                    </ng-container>
-                </ng-template>
-                <ng-template #third>
-                    <p class="text-white">Your high score: {{highScore}}</p>
-                    <p class="text-white">Your score:</p>
-                    <button class="btn btn-primary mt-5" (click)="restartGame();">Play again!</button>
-                </ng-template>
-            </div>
-        </ng-template>-->
+        <img src="assets/images/apps/flappy/cloud.gif" class="cloud">
+        <img src="assets/images/apps/flappy/bricks.jpg" class="bottomBrick">
     </div>
 </div>

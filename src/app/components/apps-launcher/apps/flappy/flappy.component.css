@@ -7,30 +7,41 @@
 }
 
 /*  Pipes   */
-.bottomPipe {
-    width: 10%;
-    height: 20% ;
-    position: fixed;
-    bottom: 0px;
-}
 .topPipe {
     width: 10%;
     height: 70% ;
     position: fixed;
     bottom: 30%;
+    background-image: linear-gradient(to right, lightgreen, green, green, black);
+    border-radius: 0px 0px 0.5rem 0.5rem;
+    border: 1px solid black;
 }
-
-.bottomPipe2 {
+.bottomPipe {
     width: 10%;
-    height: 30% ;
+    height: 20% ;
     position: fixed;
     bottom: 0px;
+    background-image: linear-gradient(to right, lightgreen, green, green, black);
+    border-radius: 0.5rem 0.5rem 0px 0px;
+    border: 1px solid black;
 }
 .topPipe2 {
     width: 10%;
     height: 60% ;
     position: fixed;
     bottom: 40%;
+    background-image: linear-gradient(to right, lightgreen, green, green, black);
+    border-radius: 0px 0px 0.5rem 0.5rem;
+    border: 1px solid black;
+}
+.bottomPipe2 {
+    width: 10%;
+    height: 30% ;
+    position: fixed;
+    bottom: 0px;
+    background-image: linear-gradient(to right, lightgreen, green, green, black);
+    border-radius: 0.5rem 0.5rem 0px 0px;
+    border: 1px solid black;
 }
 
 /*  Cloud   */
