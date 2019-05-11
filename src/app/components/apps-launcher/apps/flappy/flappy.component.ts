@@ -29,8 +29,7 @@ export class FlappyComponent implements OnInit, OnDestroy {
   //Game logic
   timer;
 
-  constructor(private firestore: AngularFirestore) {
-  }
+  constructor(private firestore: AngularFirestore) { }
 
   ngOnInit() {
     if (!localStorage.getItem('flappyGameHighScore')) {
@@ -140,7 +139,7 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   playerLose(): void {
-    if (this.score > this.highScore) {
+    if (this.score > this.highScore && this.score > Number(localStorage.getItem('flappyBirdGlobalHighScore'))) {
       this.highScore = this.score;
       localStorage.setItem('flappyGameHighScore', this.score.toString());
       this.publish(this.highScore);

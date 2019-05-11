@@ -56,6 +56,7 @@ export class FlappyHighScoreComponent implements OnInit {
         }
       });
     });
+    localStorage.setItem('flappyBirdGlobalHighScore', this.scoreBoard[0].score.toString());
     this.createForm();
   }
 
