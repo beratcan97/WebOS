@@ -20,21 +20,21 @@
             <table class="table table-striped bg-success mt-3">
                 <thead>
                     <tr>
-                        <ng-container *ngIf="lang == 'sv-SE';else second">
+                        <ng-container *ngIf="lang == 'sv-SE';else second2">
                             <th scope="col">#</th>
                             <th scope="col">Namn</th>
                             <th scope="col">Poäng</th>
                             <th scope="col">Datum</th>
                         </ng-container>
-                        <ng-template #second>
-                            <ng-container *ngIf="lang == 'tr-TR';else third">
+                        <ng-template #second2>
+                            <ng-container *ngIf="lang == 'tr-TR';else third2">
                                 <th scope="col">#</th>
                                 <th scope="col">isim</th>
                                 <th scope="col">Puan</th>
                                 <th scope="col">Tarih</th>
                             </ng-container>
                         </ng-template>
-                        <ng-template #third>
+                        <ng-template #third2>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Score</th>
@@ -54,7 +54,7 @@
         </div>
     </ng-container>
     <ng-template #usernameAddScreen>
-        <ng-container *ngIf="lang == 'sv-SE';else second">
+        <ng-container *ngIf="lang == 'sv-SE';else second3">
             <form [formGroup]="nameForm">
                 <div class="form-group">
                     <label for="name" class="text-white">Namn</label>
@@ -63,8 +63,8 @@
             </form>
             <button type="button" class="btn btn-success" (click)="saveName()">Spara</button>
         </ng-container>
-        <ng-template #second>
-            <ng-container *ngIf="lang == 'tr-TR';else third">
+        <ng-template #second3>
+            <ng-container *ngIf="lang == 'tr-TR';else third3">
                 <form [formGroup]="nameForm">
                     <div class="form-group">
                         <label for="name" class="text-white">isim</label>
@@ -74,7 +74,7 @@
                 <button type="button" class="btn btn-success" (click)="saveName()">Kaydet</button>
             </ng-container>
         </ng-template>
-        <ng-template #third>
+        <ng-template #third3>
             <form [formGroup]="nameForm">
                 <div class="form-group">
                     <label for="name" class="text-white">Name</label>
