@@ -4,13 +4,15 @@
     <div class="form-group">
       <label for="fromCur">From currency</label>
       <select class="form-control" id="fromCur" placeholder="Enter currency" formControlName="fromCur">
-        <option value="EUR">EUR</option>
-        <option value="SEK">SEK</option>
+        <ng-container *ngFor="let currency of currencys">
+          <option value="{{currency}}">{{currency}}</option>
+        </ng-container>
       </select>
       <label for="toCur">To currency</label>
       <select class="form-control" id="toCur" placeholder="Enter currency" formControlName="toCur">
-        <option value="EUR">EUR</option>
-        <option value="SEK">SEK</option>
+        <ng-container *ngFor="let currency of currencys">
+          <option value="{{currency}}">{{currency}}</option>
+        </ng-container>
       </select>
     </div>
   </form>
