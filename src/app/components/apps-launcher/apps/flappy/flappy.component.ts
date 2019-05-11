@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-flappy',
@@ -29,7 +30,7 @@ export class FlappyComponent implements OnInit, OnDestroy {
   //Game logic
   timer;
 
-  constructor() {
+  constructor(private firestore: AngularFirestore) {
   }
 
   ngOnInit() {
@@ -51,6 +52,21 @@ export class FlappyComponent implements OnInit, OnDestroy {
     clearInterval(this.timer);
     this.resetGame();
   }
+
+  publish(highScore) {
+    this.firestore.collection('flappyHighScore').add({
+      'score': highScore,
+      'name': 'TEST'
+    })
+      .then(
+        res => {
+          console.log('published');
+        }
+      ),
+      err => {
+        console.log(err);
+      }
+  };
 
   pipeUpdate(): void {
     //Line 1
@@ -126,16 +142,17 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   playerLose(): void {
+    if (this.score > this.highScore) {
+      this.highScore = this.score;
+      localStorage.setItem('flappyGameHighScore', this.score.toString());
+      this.publish(this.highScore);
+    }
+
     this.resetGame();
   }
 
   updateScore(): void {
     this.score++;
-
-    if (this.score > this.highScore) {
-      this.highScore = this.score;
-      localStorage.setItem('flappyGameHighScore', this.score.toString());
-    }
   }
 
   updatePlayer(): void {
