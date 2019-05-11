@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { FirebaseService } from '../../../../../services/firebase.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-flappy-high-score',
@@ -10,15 +10,22 @@ import { Router } from '@angular/router';
 })
 export class FlappyHighScoreComponent implements OnInit {
 
+  nameForm: FormGroup;
+  username: string = localStorage.getItem('username');
+  usernameExist = false;
   scoreBoard = [];
   DATA
 
   constructor(
-    private firestore: AngularFirestore,
     private service: FirebaseService,
-    private router: Router) { }
+    private router: Router,
+    private fb: FormBuilder) { }
 
   ngOnInit() {
+    if (this.username) {
+      this.usernameExist = true;
+    }
+
     this.service.gethighScores().subscribe(items => {
       this.DATA = items.map(item => {
         return item.payload.doc.data()
@@ -34,6 +41,18 @@ export class FlappyHighScoreComponent implements OnInit {
       });
       this.scoreBoard.push(tmp);
     });
+    this.createForm();
+  }
+
+  createForm(): void {
+    this.nameForm = this.fb.group({
+      name: '',
+    })
+  }
+
+  saveName(): void {
+    localStorage.setItem('username', this.nameForm.value.name);
+    this.navigate();
   }
 
   navigate(): void {

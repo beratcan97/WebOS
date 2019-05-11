@@ -1,8 +1,21 @@
 <app-apps-launcher></app-apps-launcher>
 <div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-primary">
-    <button (click)="navigate()">PLAY!</button>
-    <div class="d-flex" *ngFor="let advertisement of scoreBoard">
-        <p>{{advertisement.name}}</p>
-        <p>{{advertisement.score}}</p>
-    </div>
+
+    <ng-container *ngIf="usernameExist; else usernameAddScreen">
+        <h1 class="text-white">Welcome {{username}}</h1>
+        <button type="button" class="btn btn-success" (click)="navigate()">PLAY!</button>
+        <div class="d-flex" *ngFor="let advertisement of scoreBoard">
+            <p class="text-white">{{advertisement.name}}</p>
+            <p class="text-white">{{advertisement.score}}</p>
+        </div>
+    </ng-container>
+    <ng-template #usernameAddScreen>
+        <form [formGroup]="nameForm">
+            <div class="form-group">
+                <label for="name">Namn</label>
+                <input type="text" class="form-control" id="name" placeholder="Namn" formControlName="name">
+            </div>
+        </form>
+        <button type="button" class="btn btn-success" (click)="saveName()">Save</button>
+    </ng-template>
 </div>
