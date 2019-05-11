@@ -50,6 +50,7 @@ import { NotesComponent } from './components/apps-launcher/apps/notes/notes.comp
 import { CpmComponent } from './components/apps-launcher/apps/cpm/cpm.component';
 import { DualWebComponent } from './components/apps-launcher/apps/dual-web/dual-web.component';
 import { FlappyComponent } from './components/apps-launcher/apps/flappy/flappy.component';
+import { FlappyHighScoreComponent } from './components/apps-launcher/apps/flappy/flappy-high-score/flappy-high-score.component';
 import { MapsComponent } from './components/apps-launcher/apps/maps/maps.component';
 import { BlackjackComponent } from './components/apps-launcher/apps/blackjack/blackjack.component';
 
@@ -75,6 +76,7 @@ const appRoutes: Routes = [
   { path: 'cpm', component: CpmComponent },
   { path: 'dualWeb', component: DualWebComponent },
   { path: 'flappy', component: FlappyComponent },
+  { path: 'flappyHighScore', component: FlappyHighScoreComponent },
   { path: 'maps', component: MapsComponent },
   { path: 'blackJack', component: BlackjackComponent },
 
@@ -123,6 +125,7 @@ const appRoutes: Routes = [
     CpmComponent,
     DualWebComponent,
     FlappyComponent,
+    FlappyHighScoreComponent,
     MapsComponent,
 
     //Settings

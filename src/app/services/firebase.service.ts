@@ -13,6 +13,7 @@ export class FirebaseService {
       ref
         .orderBy('score')).snapshotChanges();
   }
+  /*
   orderBy(value) {
     return this.firestore.collection('advertisement', ref =>
       ref
@@ -26,5 +27,5 @@ export class FirebaseService {
         .startAt(searchValue)
         .endAt(searchValue)
         .limit(10)).snapshotChanges();
-  }
+  }*/
 }

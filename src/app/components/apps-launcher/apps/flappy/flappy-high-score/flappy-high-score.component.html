@@ -1,0 +1,8 @@
+<app-apps-launcher></app-apps-launcher>
+<div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-primary">
+    <button (click)="navigate()">PLAY!</button>
+    <div class="d-flex" *ngFor="let advertisement of scoreBoard">
+        <p>{{advertisement.name}}</p>
+        <p>{{advertisement.score}}</p>
+    </div>
+</div>

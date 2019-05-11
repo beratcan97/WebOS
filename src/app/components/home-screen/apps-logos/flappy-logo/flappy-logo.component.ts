@@ -13,6 +13,6 @@ export class FlappyLogoComponent implements OnInit {
   ngOnInit() {
   }
   navigate(): void {
-    this.router.navigate(['/flappy']);
+    this.router.navigate(['/flappyHighScore']);
   }
 }

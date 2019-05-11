@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { FirebaseService } from '../../../../../../services/firebase.service';
 
 @Component({
   selector: 'app-about',
@@ -13,16 +11,8 @@ export class AboutComponent implements OnInit {
 
   DATA;
 
-  constructor(
-    private firestore: AngularFirestore,
-    private service: FirebaseService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.service.gethighScores().subscribe(items => {
-      this.DATA = items.map(item => {
-        console.log(item.payload.doc.id);
-        return item.payload.doc.data()
-      })
-    });
   }
 }
