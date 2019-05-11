@@ -15,7 +15,16 @@ export class FlappyHighScoreComponent implements OnInit {
   nameForm: FormGroup;
   username: string = localStorage.getItem('username');
   usernameExist = false;
-  scoreBoard = [];
+  scoreBoard = [{
+    'username': '',
+    'score': 0
+  }, {
+    'username': '',
+    'score': 0
+  }, {
+    'username': '',
+    'score': 0
+  }];
   DATA
 
   constructor(
@@ -33,15 +42,19 @@ export class FlappyHighScoreComponent implements OnInit {
         return item.payload.doc.data()
       });
 
-      let tmp = {
-        'score': 0
-      };
       this.DATA.forEach(score => {
-        if (score.score > tmp.score) {
-          tmp = score;
+        if (score.score > this.scoreBoard[0].score) {
+          // This order of assignment is important
+          this.scoreBoard[2] = this.scoreBoard[1];
+          this.scoreBoard[1] = this.scoreBoard[0];
+          this.scoreBoard[0] = score;
+        } else if (score.score > this.scoreBoard[1].score) {
+          this.scoreBoard[2] = this.scoreBoard[1];
+          this.scoreBoard[1] = score;
+        } else if (score.score > this.scoreBoard[2].score) {
+          this.scoreBoard[2] = score;
         }
       });
-      this.scoreBoard.push(tmp);
     });
     this.createForm();
   }
