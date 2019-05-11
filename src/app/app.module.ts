@@ -11,6 +11,12 @@ import { DockComponent } from './components/home-screen/dock/dock.component';
 import { AppsLogosComponent } from './components/home-screen/apps-logos/apps-logos.component';
 import { AppsLauncherComponent } from './components/apps-launcher/apps-launcher.component';
 
+//Firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 // LOGOS
 import { NewsLogoComponent } from './components/home-screen/apps-logos/news-logo/news-logo.component';
 import { StocksLogoComponent } from './components/home-screen/apps-logos/stocks-logo/stocks-logo.component';
@@ -134,6 +140,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
