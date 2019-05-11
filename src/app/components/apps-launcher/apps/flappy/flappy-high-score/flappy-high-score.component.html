@@ -2,8 +2,20 @@
 <div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-primary">
 
     <ng-container *ngIf="usernameExist; else usernameAddScreen">
-        <h1 class="text-white">Welcome {{username}}</h1>
-        <button type="button" class="btn btn-success" (click)="navigate()">PLAY!</button>
+        <ng-container *ngIf="lang == 'sv-SE';else second">
+            <h1 class="text-white">Välkommen {{username}}</h1>
+            <button type="button" class="btn btn-success" (click)="navigate()">Spela!</button>
+        </ng-container>
+        <ng-template #second>
+            <ng-container *ngIf="lang == 'tr-TR';else third">
+                <h1 class="text-white">Hoşgeldiniz {{username}}</h1>
+                <button type="button" class="btn btn-success" (click)="navigate()">Oyna!</button>
+            </ng-container>
+        </ng-template>
+        <ng-template #third>
+            <h1 class="text-white">Welcome {{username}}</h1>
+            <button type="button" class="btn btn-success" (click)="navigate()">Play!</button>
+        </ng-template>
         <div class="d-flex">
             <table class="table table-striped bg-success mt-3">
                 <thead>
@@ -31,7 +43,7 @@
                     <input type="text" class="form-control" id="name" placeholder="Namn" formControlName="name">
                 </div>
             </form>
-            <button type="button" class="btn btn-success" (click)="saveName()">Save</button>
+            <button type="button" class="btn btn-success" (click)="saveName()">Spara</button>
         </ng-container>
         <ng-template #second>
             <ng-container *ngIf="lang == 'tr-TR';else third">
@@ -41,7 +53,7 @@
                         <input type="text" class="form-control" id="name" placeholder="isim" formControlName="name">
                     </div>
                 </form>
-                <button type="button" class="btn btn-success" (click)="saveName()">Save</button>
+                <button type="button" class="btn btn-success" (click)="saveName()">Kaydet</button>
             </ng-container>
         </ng-template>
         <ng-template #third>
