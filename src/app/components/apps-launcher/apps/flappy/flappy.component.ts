@@ -24,10 +24,11 @@ export class FlappyComponent implements OnInit, OnDestroy {
 
   //Score
   highScore: number = parseInt(localStorage.getItem('flappyGameHighScore'));
-  score: number = 0;
+  score: number = Math.floor((Math.random() * 30) + 10);
 
   //Game logic
   timer;
+  newPosForPipes: number;
 
   constructor(private firestore: AngularFirestore) { }
 
@@ -84,20 +85,23 @@ export class FlappyComponent implements OnInit, OnDestroy {
       document.getElementById('bp1').style.right = (this.bottomPipe.toString() + '%');
     }
 
+    this.newPosForPipes = Math.floor((Math.random() * 30) + 10);
     //Line 2
     this.topPipe2++;
     this.bottomPipe2++;
 
     //Top pipe updater 
-    if (this.topPipe2 == 100) {
-      this.topPipe2 = 2;
+    if (this.topPipe2 == 100 || this.topPipe2 == 1) {
+      this.topPipe2 = 1;
+      document.getElementById('tp2').style.bottom = ((this.newPosForPipes + 10).toString() + '%');
     } else {
       document.getElementById('tp2').style.right = (this.topPipe2.toString() + '%');
     }
     2
     //Bottom pipe updater
-    if (this.bottomPipe2 == 100) {
-      this.bottomPipe2 = 2;
+    if (this.bottomPipe2 == 100 || this.bottomPipe2 == 1) {
+      this.bottomPipe2 = 1;
+      document.getElementById('bp2').style.height = (this.newPosForPipes.toString() + '%');
     } else {
       document.getElementById('bp2').style.right = (this.bottomPipe2.toString() + '%');
     }
@@ -127,12 +131,14 @@ export class FlappyComponent implements OnInit, OnDestroy {
 
     //Line 2
     //Touch top pipe    
-    if (this.topPipe2 > 70 && this.topPipe2 < 90 && this.playerBottom > 40) {
+    let tp2Bottom: number = Number((document.getElementById('tp2').style.bottom).slice(0, -1));
+
+    if (this.topPipe2 > 70 && this.topPipe2 < 90 && this.playerBottom > tp2Bottom) {
       console.log("line 2 top");
       this.playerLose();
     } else
       //Touch bottom pipe    
-      if (this.bottomPipe2 > 70 && this.bottomPipe2 < 90 && this.playerBottom < 30) {
+      if (this.bottomPipe2 > 70 && this.bottomPipe2 < 90 && this.playerBottom < tp2Bottom - 10) {
         console.log("line 2 bottom");
         this.playerLose();
       }
