@@ -13,6 +13,13 @@ export class FirebaseService {
       ref
         .orderBy('score')).snapshotChanges();
   }
+
+  getCpmHighScores() {
+    return this.firestore.collection('cpmHighScore', ref =>
+      ref
+        .orderBy('score')).snapshotChanges();
+  }
+
   /*
   orderBy(value) {
     return this.firestore.collection('advertisement', ref =>

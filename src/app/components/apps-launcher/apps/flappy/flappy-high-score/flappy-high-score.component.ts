@@ -25,7 +25,7 @@ export class FlappyHighScoreComponent implements OnInit {
     'username': '',
     'score': 0
   }];
-  DATA
+  DATA;
 
   constructor(
     private service: FirebaseService,
