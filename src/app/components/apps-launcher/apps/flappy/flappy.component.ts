@@ -139,7 +139,7 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   playerLose(): void {
-    if (this.score > this.highScore && this.score > Number(localStorage.getItem('flappyBirdGlobalHighScore'))) {
+    if (this.score > this.highScore) {
       this.highScore = this.score;
       localStorage.setItem('flappyGameHighScore', this.score.toString());
       this.publish(this.highScore);
