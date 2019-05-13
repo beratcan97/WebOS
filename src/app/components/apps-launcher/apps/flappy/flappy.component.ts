@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flappy',
@@ -24,13 +25,14 @@ export class FlappyComponent implements OnInit, OnDestroy {
 
   //Score
   highScore: number = parseInt(localStorage.getItem('flappyGameHighScore'));
-  score: number = Math.floor((Math.random() * 30) + 10);
+  score: number = 0;
 
   //Game logic
   timer;
   newPosForPipes: number;
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore,
+    private router: Router) { }
 
   ngOnInit() {
     if (!localStorage.getItem('flappyGameHighScore')) {
@@ -47,7 +49,6 @@ export class FlappyComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     clearInterval(this.timer);
-    this.resetGame();
   }
 
   publish(highScore) {
@@ -151,11 +152,11 @@ export class FlappyComponent implements OnInit, OnDestroy {
       this.publish(this.highScore);
     }
 
-    this.resetGame();
+    this.router.navigate(['/flappyHighScore']);
   }
 
   updateScore(): void {
-    this.score++;
+    this.score = +(this.score + 0.1).toFixed(1);
   }
 
   updatePlayer(): void {
@@ -164,27 +165,11 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   onScreenClick(): void {
-    let newPos = this.playerBottom + 7;
+    let newPos = this.playerBottom + 6;
 
     while (this.playerBottom < newPos) {
       this.playerBottom++;
     }
     document.getElementById('player').style.bottom = (this.playerBottom.toString() + '%');
-  }
-
-  resetGame(): void {
-    //Player
-    this.playerBottom = 30;
-
-    //pipe
-    //Line 1
-    this.bottomPipe = 1;
-    this.topPipe = 1;
-    //Line 2
-    this.bottomPipe2 = -50;
-    this.topPipe2 = -50;
-
-    //Score
-    this.score = 0;
   }
 }
