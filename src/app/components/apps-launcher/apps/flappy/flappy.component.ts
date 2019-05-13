@@ -164,7 +164,7 @@ export class FlappyComponent implements OnInit, OnDestroy {
   }
 
   onScreenClick(): void {
-    let newPos = this.playerBottom + 5;
+    let newPos = this.playerBottom + 7;
 
     while (this.playerBottom < newPos) {
       this.playerBottom++;
@@ -174,7 +174,7 @@ export class FlappyComponent implements OnInit, OnDestroy {
 
   resetGame(): void {
     //Player
-    this.playerBottom = 50;
+    this.playerBottom = 30;
 
     //pipe
     //Line 1
