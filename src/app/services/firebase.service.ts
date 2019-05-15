@@ -20,19 +20,9 @@ export class FirebaseService {
         .orderBy('score')).snapshotChanges();
   }
 
-  /*
-  orderBy(value) {
-    return this.firestore.collection('advertisement', ref =>
+  getChats() {
+    return this.firestore.collection('chat', ref =>
       ref
-        .orderBy(value)
-        .limit(10)).snapshotChanges();
+        .orderBy('date')).snapshotChanges();
   }
-  search(searchValue, orderByValue) {
-    return this.firestore.collection('advertisement', ref =>
-      ref
-        .orderBy(orderByValue)
-        .startAt(searchValue)
-        .endAt(searchValue)
-        .limit(10)).snapshotChanges();
-  }*/
 }

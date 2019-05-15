@@ -1,0 +1,22 @@
+<app-apps-launcher></app-apps-launcher>
+
+<div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-dark">
+    <div class="chatConatiner">
+        <div *ngFor="let chat of DATA" class="border border-primary">
+            <div class="d-flex flex-row justify-content-between">
+                <p class="text-muted">{{chat.name}}</p>
+                <p class="text-muted">{{chat.readDate}}</p>
+            </div>
+            <p class="text-white">{{chat.chat}}</p>
+        </div>
+    </div>
+
+    <div class="position-fixed">
+        <form [formGroup]="chatForm" class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" id="chat" placeholder="Type here..." formControlName="chat">
+            </div>
+            <button type="button" class="btn btn-success ml-2 mb-2" (click)="sendChat()">Send</button>
+        </form>
+    </div>
+</div>

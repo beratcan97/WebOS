@@ -34,6 +34,7 @@ import { DualWebLogoComponent } from './components/home-screen/apps-logos/dual-w
 import { FlappyLogoComponent } from './components/home-screen/apps-logos/flappy-logo/flappy-logo.component';
 import { MapsLogoComponent } from './components/home-screen/apps-logos/maps-logo/maps-logo.component';
 import { BlackjackLogoComponent } from './components/home-screen/apps-logos/blackjack-logo/blackjack-logo.component';
+import { ChatLogoComponent } from './components/home-screen/apps-logos/chat-logo/chat-logo.component';
 
 //APPS
 import { NewsComponent } from './components/apps-launcher/apps/news/news.component';
@@ -53,6 +54,7 @@ import { FlappyComponent } from './components/apps-launcher/apps/flappy/flappy.c
 import { FlappyHighScoreComponent } from './components/apps-launcher/apps/flappy/flappy-high-score/flappy-high-score.component';
 import { MapsComponent } from './components/apps-launcher/apps/maps/maps.component';
 import { BlackjackComponent } from './components/apps-launcher/apps/blackjack/blackjack.component';
+import { ChatComponent } from './components/apps-launcher/apps/chat/chat.component';
 
 //Settings
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
@@ -79,10 +81,11 @@ const appRoutes: Routes = [
   { path: 'flappyHighScore', component: FlappyHighScoreComponent },
   { path: 'maps', component: MapsComponent },
   { path: 'blackJack', component: BlackjackComponent },
+  { path: 'blackJack', component: BlackjackComponent },
 
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'chat', component: ChatComponent },
 ];
 
 @NgModule({
@@ -108,6 +111,7 @@ const appRoutes: Routes = [
     DualWebLogoComponent,
     FlappyLogoComponent,
     MapsLogoComponent,
+    ChatLogoComponent,
 
     // APPS
     NewsComponent,
@@ -127,6 +131,7 @@ const appRoutes: Routes = [
     FlappyComponent,
     FlappyHighScoreComponent,
     MapsComponent,
+    ChatComponent,
 
     //Settings
     WallpaperComponent,
