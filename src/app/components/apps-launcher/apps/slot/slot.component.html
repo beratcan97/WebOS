@@ -1,43 +1,33 @@
-<ng-container *ngIf="isLoaded; else loadingScreen">
-  <app-apps-launcher></app-apps-launcher>
-  <div class="d-flex justify-content-center iosBgColor vh-100-height">
-    <div class="maxDesktop">
-      <img src="assets/images/apps/slots/slotBanner.png" class="w-100" alt="slots boot icon">
+<div class="d-flex justify-content-center iosBgColor">
+  <ng-container *ngIf="isLoaded; else loadingScreen">
+    <app-apps-launcher></app-apps-launcher>
+    <div class="d-flex justify-content-center iosBgColor vh-100-height maxDesktop">
+      <div class="d-flex flex-column">
+        <img src="assets/images/apps/slots/slotBanner.png" width="320px" alt="slots boot icon">
 
-      <div class="spinnerContainer d-flex justify-content-between m-5">
-        <h1>{{spinner1}}</h1>
-        <h1>{{spinner2}}</h1>
-        <h1>{{spinner3}}</h1>
-      </div>
-      <ng-container *ngIf="result">
-        <div class="spinnerContainer d-flex justify-content-between m-5">
+        <div id="color" class="spinnerContainer m-5">
+          <div class="d-flex justify-content-between border-bottom">
+            <h1>{{spinner1}}</h1>
+            <h1>{{spinner2}}</h1>
+            <h1>{{spinner3}}</h1>
+          </div>
           <h1>{{result}}</h1>
         </div>
-      </ng-container>
 
-      <ng-container *ngIf="lang == 'sv-SE';else second">
-        <button type="button" class="btn btn-primary w-100" (click)="spin(1)">Spin $1</button>
-        <button type="button" class="btn btn-primary w-100" (click)="spin(5)">Spin $5</button>
-        <button type="button" class="btn btn-primary w-100" (click)="spin(10)">Spin $10</button>
-      </ng-container>
-      <ng-template #second>
-        <ng-container *ngIf="lang == 'tr-TR';else third">
+        <h1>${{cash}}</h1>
+
+        <div class="d-flex flex-row" *ngIf="!spinning">
           <button type="button" class="btn btn-primary w-100" (click)="spin(1)">Spin $1</button>
-          <button type="button" class="btn btn-primary w-100" (click)="spin(5)">Spin $5</button>
+          <button type="button" class="btn btn-primary mx-3 w-100" (click)="spin(5)">Spin $5</button>
           <button type="button" class="btn btn-primary w-100" (click)="spin(10)">Spin $10</button>
-        </ng-container>
-      </ng-template>
-      <ng-template #third>
-        <button type="button" class="btn btn-primary w-100" (click)="spin(1)">Spin $1</button>
-        <button type="button" class="btn btn-primary w-100 mt-1" (click)="spin(5)">Spin $5</button>
-        <button type="button" class="btn btn-primary w-100 mt-1" (click)="spin(10)">Spin $10</button>
-      </ng-template>
-
-      <h1>${{cash}}</h1>
+        </div>
+      </div>
     </div>
-  </div>
-</ng-container>
+  </ng-container>
 
-<ng-template #loadingScreen>
-  <img src="assets/images/apps/slots/slotmachine.gif" alt="slots boot icon" width="100%" height="100%">
-</ng-template>
+  <ng-template #loadingScreen>
+    <div class="fullScreen d-flex flex-column justify-content-center align-items-center">
+      <img src="assets/images/apps/slots/slotmachine.gif" alt="slots boot icon" width="100%" height="100%">
+    </div>
+  </ng-template>
+</div>

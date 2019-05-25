@@ -1,3 +1,4 @@
 .spinnerContainer {
-    border: 10px solid blue;
+    border: 2rem solid blue;
+    border-radius: 1rem;
 }

@@ -15,28 +15,38 @@ export class SlotComponent implements OnInit {
   spinner3: number = 0;
   bet: number = 0;
   cash: number = 10;
-  result: string;
+  result: string = 'Bet & spin!';
 
+  spinning = false;
   constructor() { }
 
   ngOnInit() {
-    this.delay(3000).then(any => {
-      this.isLoaded = true;
-    });
-  }
-  async delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    setTimeout(() => { this.isLoaded = true }, 3000);
   }
 
   spin(bet) {
-    if (this.cash > 0) {
+    if (this.cash >= bet) {
       this.cash = this.cash - bet;
+      this.result = 'Spinning';
+      let spinner = setInterval(() => {
+        this.spinning = true;
+        this.spinner1 = this.generateRandomNumber();
+        this.spinner2 = this.generateRandomNumber();
+        this.spinner3 = this.generateRandomNumber();
 
-      this.spinner1 = this.generateRandomNumber();
-      this.spinner2 = this.generateRandomNumber();
-      this.spinner3 = this.generateRandomNumber();
-  
-      this.checkWin(bet);
+        //sets random color
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        this.changeColor(color);
+      }, 100);
+      setTimeout(() => {
+        clearInterval(spinner);
+        this.spinning = false;
+        this.checkWin(bet);
+      }, 3000);
     } else {
       this.result = 'No money left';
     }
@@ -46,17 +56,24 @@ export class SlotComponent implements OnInit {
     //All 3 same
     if (this.spinner1 === this.spinner2 && this.spinner1 === this.spinner3) {
       this.result = 'Jackpot';
+      this.changeColor('green');
       this.cash = this.cash + (100 * bet);
     }
     //2 same
     else if (this.spinner1 === this.spinner2 || this.spinner2 === this.spinner3 || this.spinner1 === this.spinner3) {
       this.result = 'Win';
+      this.changeColor('green');
       this.cash = this.cash + (4 * bet);
     }
     //Lose
     else {
       this.result = 'Lose';
+      this.changeColor('red');
     }
+  }
+
+  changeColor(color) {
+    document.getElementById('color').style.borderColor = color;
   }
 
   generateRandomNumber() {
