@@ -8,6 +8,11 @@ export class FirebaseService {
 
   constructor(private firestore: AngularFirestore) { }
 
+  signIn(password) {
+    return this.firestore.collection('users', ref =>
+      ref.where('password', '==', password)).snapshotChanges();
+  }
+
   gethighScores() {
     return this.firestore.collection('flappyHighScore', ref =>
       ref

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { WeatherAPIService } from './services/weather-api.service';
 import { StocksApiService } from './services/stocks-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent {
 
   constructor(
     private weatherAPIService: WeatherAPIService,
+    private router: Router,
     private stocksApiService: StocksApiService) { }
 
   ngOnInit() {
@@ -24,13 +26,7 @@ export class AppComponent {
     // Get external DATA
     this.weatherAPIService.getWeather().subscribe();
 
-    //localStorage
-    if (localStorage.length) {
-      //device
-      localStorage.setItem('device', this.getDevice());
-      //wallpaper
-      localStorage.setItem('wallpaper', 'blueviolet');
-    }
+    this.router.navigate(['./auth']);
   }
 
   getDevice() {

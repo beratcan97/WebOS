@@ -59,6 +59,7 @@ import { ChatComponent } from './components/apps-launcher/apps/chat/chat.compone
 //Settings
 import { WallpaperComponent } from './components/apps-launcher/apps/settings/li/wallpaper/wallpaper.component';
 import { AboutComponent } from './components/apps-launcher/apps/settings/li/about/about.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeScreenComponent },
@@ -81,7 +82,7 @@ const appRoutes: Routes = [
   { path: 'flappyHighScore', component: FlappyHighScoreComponent },
   { path: 'maps', component: MapsComponent },
   { path: 'blackJack', component: BlackjackComponent },
-  { path: 'blackJack', component: BlackjackComponent },
+  { path: 'auth', component: AuthComponent },
 
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
@@ -138,6 +139,7 @@ const appRoutes: Routes = [
     AboutComponent,
     BlackjackLogoComponent,
     BlackjackComponent,
+    AuthComponent,
   ],
 
   imports: [
