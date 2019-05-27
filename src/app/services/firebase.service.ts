@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
@@ -7,6 +7,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class FirebaseService {
 
   constructor(private firestore: AngularFirestore) { }
+
+  updateUser(user) {
+    return this.firestore.collection('users').doc(localStorage.getItem('id')).set(user);
+  }
 
   signIn(password) {
     return this.firestore.collection('users', ref =>

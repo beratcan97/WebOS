@@ -14,6 +14,9 @@ export class AuthComponent implements OnInit {
   registerForm: FormGroup;
   signInForm: FormGroup;
   DATA;
+
+  dateDATA = new Date();
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -32,6 +35,7 @@ export class AuthComponent implements OnInit {
       wallpaper: '',
       CPMHighScore: '',
       flappyHighScore: '',
+      lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
     });
 
     this.signInForm = this.fb.group({
@@ -43,12 +47,18 @@ export class AuthComponent implements OnInit {
   signIn(): void {
     this.service.signIn(this.signInForm.value.password).subscribe(items => {
       this.DATA = items.map(item => {
+        localStorage.setItem('id', item.payload.doc.id);
         return item.payload.doc.data()
       });
       console.log(this.DATA);
       if (this.DATA[0].password == this.signInForm.value.password) {
         localStorage.setItem('username', this.signInForm.value.name);
+        localStorage.setItem('password', this.signInForm.value.password);
+        localStorage.setItem('CPMHighScore', '');
+        localStorage.setItem('flappyHighScore', '');
+        localStorage.setItem('wallpaper', '');
         localStorage.setItem('auth', 'true');
+        console.log(this.DATA.key);
         this.router.navigate(['']);
       } else {
         alert('Wrong password');
