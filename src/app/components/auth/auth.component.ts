@@ -45,20 +45,25 @@ export class AuthComponent implements OnInit {
   }
 
   signIn(): void {
+    let tmp;
     this.service.signIn(this.signInForm.value.password).subscribe(items => {
       this.DATA = items.map(item => {
-        localStorage.setItem('id', item.payload.doc.id);
+        tmp = item.payload.doc.id;
         return item.payload.doc.data()
       });
       console.log(this.DATA);
       if (this.DATA[0].password == this.signInForm.value.password) {
-        localStorage.setItem('username', this.signInForm.value.name);
-        localStorage.setItem('password', this.signInForm.value.password);
-        localStorage.setItem('CPMHighScore', '');
-        localStorage.setItem('flappyHighScore', '');
-        localStorage.setItem('wallpaper', '');
-        localStorage.setItem('auth', 'true');
-        console.log(this.DATA.key);
+
+        let user = {
+          username: this.signInForm.value.name,
+          password: this.signInForm.value.password,
+          CPMHighScore: this.DATA[0].CPMHighScore,
+          flappyHighScore: this.DATA[0].flappyHighScore,
+          wallpaper: this.DATA[0].wallpaper,
+          auth: 'true',
+          id: tmp,
+        }
+        localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['']);
       } else {
         alert('Wrong password');

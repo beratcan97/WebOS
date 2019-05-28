@@ -10,7 +10,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class WallpaperComponent implements OnInit {
 
-  currentColor = localStorage.getItem('wallpaper');
   colors = ['blueviolet', 'lightslategrey', 'yellowgreen', 'lightskyblue', 'lightcoral', 'lightpink', 'lightseagreen'];
   dateDATA = new Date();
 
@@ -27,17 +26,11 @@ export class WallpaperComponent implements OnInit {
   }
 
   onSubmit(color) {
-    localStorage.setItem('wallpaper', color);
-
-    const user = {
-      name: localStorage.getItem('username'),
-      password: 'qqq',
-      wallpaper: color,
-      CPMHighScore: localStorage.getItem('CPMHighScore'),
-      flappyHighScore: localStorage.getItem('flappyHighScore'),
-      lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
-    };
-
+    let user = JSON.parse(localStorage.getItem('user'));
+    user.wallpaper = color;
+    let newUser = JSON.stringify(user);
+    console.log(user);
+    console.log(newUser);
     this.service.updateUser(user)
       .then(
         res => {

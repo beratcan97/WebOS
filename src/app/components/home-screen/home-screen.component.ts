@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeScreenComponent implements OnInit {
 
-  currentColor = localStorage.getItem('wallpaper');
+  currentColor = JSON.parse(localStorage.getItem('user')).wallpaper;
 
   constructor() { }
 
   ngOnInit() {
+    console.log('--------');
+    console.log(JSON.parse(localStorage.getItem('user')));
   }
 
   rightColorFinder(testColor): boolean {

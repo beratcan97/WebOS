@@ -2,7 +2,6 @@
 
 <div class="homeScreenContainer d-flex flex-column justify-content-between iosBgColor">
   <div>
-    <p>Current color: {{currentColor}}</p>
     <ng-container *ngFor="let color of colors">
       <li class="iosStyleListItem" id="{{color}}id" (click)="onSubmit(color)">{{color}}</li>
     </ng-container>

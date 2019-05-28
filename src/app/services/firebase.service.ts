@@ -9,7 +9,7 @@ export class FirebaseService {
   constructor(private firestore: AngularFirestore) { }
 
   updateUser(user) {
-    return this.firestore.collection('users').doc(localStorage.getItem('id')).set(user);
+    return this.firestore.collection('users').doc(JSON.parse(localStorage.getItem('user')).id).set(user);
   }
 
   signIn(password) {
