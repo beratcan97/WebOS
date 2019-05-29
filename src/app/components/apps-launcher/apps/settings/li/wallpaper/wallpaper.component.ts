@@ -29,13 +29,14 @@ export class WallpaperComponent implements OnInit {
     let user = JSON.parse(localStorage.getItem('user'));
     user.wallpaper = color;
     let newUser = JSON.stringify(user);
-    console.log(user);
-    console.log(newUser);
     this.service.updateUser(user)
       .then(
         res => {
           this.router.navigate(['']);
         }
-      )
+      ),
+      err => {
+        console.log(err);
+      }
   }
 }

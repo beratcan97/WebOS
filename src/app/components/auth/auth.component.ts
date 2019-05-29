@@ -33,8 +33,6 @@ export class AuthComponent implements OnInit {
       name: '',
       password: '',
       wallpaper: '',
-      CPMHighScore: '',
-      flappyHighScore: '',
       lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
     });
 
@@ -57,11 +55,10 @@ export class AuthComponent implements OnInit {
         let user = {
           username: this.signInForm.value.name,
           password: this.signInForm.value.password,
-          CPMHighScore: this.DATA[0].CPMHighScore,
-          flappyHighScore: this.DATA[0].flappyHighScore,
           wallpaper: this.DATA[0].wallpaper,
           auth: 'true',
           id: tmp,
+          lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
         }
         localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['']);

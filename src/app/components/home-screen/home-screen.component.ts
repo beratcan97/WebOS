@@ -12,8 +12,6 @@ export class HomeScreenComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('--------');
-    console.log(JSON.parse(localStorage.getItem('user')));
   }
 
   rightColorFinder(testColor): boolean {

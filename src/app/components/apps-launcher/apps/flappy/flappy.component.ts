@@ -53,8 +53,9 @@ export class FlappyComponent implements OnInit, OnDestroy {
 
   publish(highScore) {
     this.firestore.collection('flappyHighScore').add({
+      'id': JSON.parse(localStorage.getItem('user')).id,
       'score': highScore,
-      'name': localStorage.getItem('username'),
+      'name': JSON.parse(localStorage.getItem('user')).username,
       'date': this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
     })
       .then(
