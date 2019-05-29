@@ -45,7 +45,7 @@ export class ChatComponent implements OnInit {
 
   sendChat() {
     this.firestore.collection('chat').add({
-      'name': localStorage.getItem('username'),
+      'name': JSON.parse(localStorage.getItem('user')).username,
       'chat': this.chatForm.value.chat,
       'date': new Date(),
       'readDate': this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
