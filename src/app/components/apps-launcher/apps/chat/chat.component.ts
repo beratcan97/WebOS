@@ -13,6 +13,7 @@ export class ChatComponent implements OnInit {
   chatForm: FormGroup;
   DATA;
   dateDATA = new Date();
+  lastChat;
 
   constructor(private fb: FormBuilder,
     private service: FirebaseService,
@@ -40,7 +41,10 @@ export class ChatComponent implements OnInit {
       this.DATA = chats.map(chat => {
         return chat.payload.doc.data()
       });
+      this.lastChat = this.DATA.pop();
     });
+
+
   }
 
   sendChat() {
