@@ -72,7 +72,7 @@ export class AuthComponent implements OnInit {
     this.firestore.collection('users').add(this.registerForm.value)
       .then(
         res => {
-          this.router.navigate(['']);
+          alert('Registered');
         }
       ),
       err => {
