@@ -1,26 +1,35 @@
-<div class="maxDesktop vh-100-height w-100 iosBgColor">
+<div class="d-flex justify-content-center iosBgColor">
+  <div class="maxDesktop vh-100-height">
 
-  <form [formGroup]="registerForm">
-    <div class="form-group">
-      <label for="name">Namn</label>
-      <input type="text" class="form-control" id="name" placeholder="Namn" formControlName="name">
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
-    </div>
-  </form>
-  <button (click)="register()">Register!</button>
+    <ng-container *ngIf="newUser;else signInFormTemplate">
+      <form [formGroup]="registerForm">
+        <div class="form-group">
+          <label for="name">Namn</label>
+          <input type="text" class="form-control" id="name" placeholder="Namn" formControlName="name">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+        </div>
+      </form>
+      <button (click)="register()">Register!</button>
+      <p (click)="newUser = false">Already registered</p>
+    </ng-container>
 
-  <form [formGroup]="signInForm">
-    <div class="form-group">
-      <label for="signInName">Namn</label>
-      <input type="text" class="form-control" id="signInName" placeholder="Namn" formControlName="name">
-    </div>
-    <div class="form-group">
-      <label for="signInPassword">Password</label>
-      <input type="password" class="form-control" id="signInPassword" placeholder="Password" formControlName="password">
-    </div>
-  </form>
-  <button (click)="signIn()">Sign in</button>
+    <ng-template #signInFormTemplate>
+      <form [formGroup]="signInForm">
+        <div class="form-group">
+          <label for="signInName">Namn</label>
+          <input type="text" class="form-control" id="signInName" placeholder="Namn" formControlName="name">
+        </div>
+        <div class="form-group">
+          <label for="signInPassword">Password</label>
+          <input type="password" class="form-control" id="signInPassword" placeholder="Password"
+            formControlName="password">
+        </div>
+      </form>
+      <button (click)="signIn()">Sign in</button>
+      <p (click)="newUser = true">Register</p>
+    </ng-template>
+  </div>
 </div>

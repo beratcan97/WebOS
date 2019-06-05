@@ -14,6 +14,7 @@ export class AuthComponent implements OnInit {
   registerForm: FormGroup;
   signInForm: FormGroup;
   DATA;
+  newUser = false;
 
   dateDATA = new Date();
 
@@ -72,6 +73,7 @@ export class AuthComponent implements OnInit {
     this.firestore.collection('users').add(this.registerForm.value)
       .then(
         res => {
+          this.newUser = false;
           alert('Registered');
         }
       ),
