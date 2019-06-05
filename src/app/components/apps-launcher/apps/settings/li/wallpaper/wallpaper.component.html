@@ -1,9 +1,11 @@
-<app-apps-launcher></app-apps-launcher>
+<div class="d-flex justify-content-center iosBgColor">
+  <app-apps-launcher></app-apps-launcher>
 
-<div class="homeScreenContainer d-flex flex-column justify-content-between iosBgColor">
-  <div>
-    <ng-container *ngFor="let color of colors">
-      <li class="iosStyleListItem" id="{{color}}id" (click)="onSubmit(color)">{{color}}</li>
-    </ng-container>
+  <div class="homeScreenContainer maxDesktop">
+    <div>
+      <ng-container *ngFor="let color of colors">
+        <li class="iosStyleListItem" id="{{color}}id" (click)="onSubmit(color)">{{color}}</li>
+      </ng-container>
+    </div>
   </div>
 </div>

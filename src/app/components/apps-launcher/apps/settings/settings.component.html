@@ -1,18 +1,20 @@
-<app-apps-launcher></app-apps-launcher>
+<div class="d-flex justify-content-center iosBgColor">
+  <app-apps-launcher></app-apps-launcher>
 
-<div class="homeScreenContainer" ontouchmove="BlockElasticScroll(event)">
-  <ng-container *ngIf="lang == 'sv-SE';else second">
-    <li class="iosStyleListItem" (click)="navigate('wallpaper')">Bakgrund</li>
-    <li class="iosStyleListItem" (click)="navigate('about')">Om</li>
-  </ng-container>
-  <ng-template #second>
-    <ng-container *ngIf="lang == 'tr-TR';else third">
-      <li class="iosStyleListItem" (click)="navigate('wallpaper')">Arkaplan</li>
-      <li class="iosStyleListItem" (click)="navigate('about')">Hakkında</li>
+  <div class="homeScreenContainer maxDesktop vh-100-height">
+    <ng-container *ngIf="lang == 'sv-SE';else second">
+      <li class="iosStyleListItem" (click)="navigate('wallpaper')">Bakgrund</li>
+      <li class="iosStyleListItem" (click)="navigate('about')">Om</li>
     </ng-container>
-  </ng-template>
-  <ng-template #third>
-    <li class="iosStyleListItem" (click)="navigate('wallpaper')">Wallpaper</li>
-    <li class="iosStyleListItem" (click)="navigate('about')">About</li>
-  </ng-template>
+    <ng-template #second>
+      <ng-container *ngIf="lang == 'tr-TR';else third">
+        <li class="iosStyleListItem" (click)="navigate('wallpaper')">Arkaplan</li>
+        <li class="iosStyleListItem" (click)="navigate('about')">Hakkında</li>
+      </ng-container>
+    </ng-template>
+    <ng-template #third>
+      <li class="iosStyleListItem" (click)="navigate('wallpaper')">Wallpaper</li>
+      <li class="iosStyleListItem" (click)="navigate('about')">About</li>
+    </ng-template>
+  </div>
 </div>

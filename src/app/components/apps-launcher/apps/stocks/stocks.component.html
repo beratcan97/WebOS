@@ -1,28 +1,30 @@
-<app-apps-launcher></app-apps-launcher>
-<div class="iosBgColor vh-100-height">
-  <form [formGroup]="searchForm">
-    <div class="form-group">
-      <label for="fromCur">From currency</label>
-      <select class="form-control" id="fromCur" placeholder="Enter currency" formControlName="fromCur">
-        <ng-container *ngFor="let currency of currencys">
-          <option value="{{currency}}">{{currency}}</option>
-        </ng-container>
-      </select>
-      <label for="toCur">To currency</label>
-      <select class="form-control" id="toCur" placeholder="Enter currency" formControlName="toCur">
-        <ng-container *ngFor="let currency of currencys">
-          <option value="{{currency}}">{{currency}}</option>
-        </ng-container>
-      </select>
-    </div>
-  </form>
-  <button (click)="getCurrency()">Search</button>
+<div class="d-flex justify-content-center iosBgColor">
+  <app-apps-launcher></app-apps-launcher>
+  <div class="maxDesktop vh-100-height">
+    <form [formGroup]="searchForm">
+      <div class="form-group">
+        <label for="fromCur">From currency</label>
+        <select class="form-control" id="fromCur" placeholder="Enter currency" formControlName="fromCur">
+          <ng-container *ngFor="let currency of currencys">
+            <option value="{{currency}}">{{currency}}</option>
+          </ng-container>
+        </select>
+        <label for="toCur">To currency</label>
+        <select class="form-control" id="toCur" placeholder="Enter currency" formControlName="toCur">
+          <ng-container *ngFor="let currency of currencys">
+            <option value="{{currency}}">{{currency}}</option>
+          </ng-container>
+        </select>
+      </div>
+    </form>
+    <button (click)="getCurrency()">Search</button>
 
-  <div class="d-flex justify-content-center iosBgColor vh-100-height">
-    <div class="d-flex flex-column" *ngIf="curFromToData">
-      <h1>{{searchForm.value.fromCur}} --> {{searchForm.value.toCur}}</h1>
-      <div class="d-flex flex-row justify-content-around">
-        <p>{{curFromToData['Realtime Currency Exchange Rate']['9. Ask Price']}}</p>
+    <div class="d-flex justify-content-center iosBgColor vh-100-height">
+      <div class="d-flex flex-column" *ngIf="curFromToData">
+        <h1>{{searchForm.value.fromCur}} --> {{searchForm.value.toCur}}</h1>
+        <div class="d-flex flex-row justify-content-around">
+          <p>{{curFromToData['Realtime Currency Exchange Rate']['9. Ask Price']}}</p>
+        </div>
       </div>
     </div>
   </div>

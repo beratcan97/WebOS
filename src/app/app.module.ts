@@ -82,11 +82,12 @@ const appRoutes: Routes = [
   { path: 'flappyHighScore', component: FlappyHighScoreComponent },
   { path: 'maps', component: MapsComponent },
   { path: 'blackJack', component: BlackjackComponent },
-  { path: 'auth', component: AuthComponent },
+  { path: 'chat', component: ChatComponent },
 
   //Settings
   { path: 'wallpaper', component: WallpaperComponent },
-  { path: 'chat', component: ChatComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'auth', component: AuthComponent },
 ];
 
 @NgModule({
@@ -113,6 +114,7 @@ const appRoutes: Routes = [
     FlappyLogoComponent,
     MapsLogoComponent,
     ChatLogoComponent,
+    BlackjackLogoComponent,
 
     // APPS
     NewsComponent,
@@ -133,12 +135,11 @@ const appRoutes: Routes = [
     FlappyHighScoreComponent,
     MapsComponent,
     ChatComponent,
+    BlackjackComponent,
 
     //Settings
     WallpaperComponent,
     AboutComponent,
-    BlackjackLogoComponent,
-    BlackjackComponent,
     AuthComponent,
   ],
 

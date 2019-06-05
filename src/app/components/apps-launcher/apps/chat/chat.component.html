@@ -1,20 +1,21 @@
-<app-apps-launcher></app-apps-launcher>
-
-<div class="fullScreen d-flex flex-column justify-content-center align-items-center bg-dark">
-    <div class="chatConatiner">
-        <div class="d-flex flex-row justify-content-between">
-            <p class="text-muted">{{lastChat.name}}</p>
-            <p class="text-muted">{{lastChat.readDate}}</p>
-        </div>
-        <p class="text-white">{{lastChat.chat}}</p>
-    </div>
-
-    <div class="position-fixed">
-        <form [formGroup]="chatForm" class="form-inline">
-            <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" id="chat" placeholder="Type here..." formControlName="chat">
+<div class="d-flex justify-content-center iosBgColor">
+    <app-apps-launcher></app-apps-launcher>
+    <div class="vh-100-height maxDesktop d-flex flex-column justify-content-center align-items-center">
+        <div class="chatConatiner">
+            <div class="d-flex flex-row justify-content-between">
+                <p class="text-muted">{{lastChat.name}}</p>
+                <p class="text-muted">{{lastChat.readDate}}</p>
             </div>
-            <button type="button" class="btn btn-success ml-2 mb-2" (click)="sendChat()">Send</button>
-        </form>
+            <p>{{lastChat.chat}}</p>
+        </div>
+
+        <div class="position-fixed">
+            <form [formGroup]="chatForm" class="form-inline">
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" id="chat" placeholder="Type here..." formControlName="chat">
+                </div>
+                <button type="button" class="btn btn-success ml-2 mb-2" (click)="sendChat()">Send</button>
+            </form>
+        </div>
     </div>
 </div>
