@@ -36,8 +36,6 @@ export class AuthComponent implements OnInit {
       age: '',
       gender: '',
       wallpaper: '',
-      auth: '',
-      id: '',
       userCreated: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
       lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
     });
@@ -83,10 +81,16 @@ export class AuthComponent implements OnInit {
         res => {
           this.newUser = false;
           alert('Registered');
+          this.resetForms();
         }
       ),
       err => {
         console.log(err);
       }
   };
+
+  resetForms() {
+    this.registerForm.reset();
+    this.signInForm.reset();
+  }
 }

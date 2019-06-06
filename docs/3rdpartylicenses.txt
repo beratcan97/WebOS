@@ -2,7 +2,7 @@
 Apache-2.0
 Apache-2.0
 
-firebase@6.1.0
+firebase@6.0.4
 Apache-2.0
 Apache-2.0
 
@@ -72,11 +72,7 @@ END OF TERMS AND CONDITIONS
 Apache-2.0
 Apache-2.0
 
-@firebase/database@0.4.3
-Apache-2.0
-Apache-2.0
-
-@firebase/firestore@1.3.4
+@firebase/firestore@1.3.3
 Apache-2.0
 Apache-2.0
 
@@ -84,9 +80,13 @@ Apache-2.0
 Apache-2.0
 Apache-2.0
 
-core-js@2.6.5
+@firebase/database@0.4.3
+Apache-2.0
+Apache-2.0
+
+core-js@2.5.7
 MIT
-Copyright (c) 2014-2019 Denis Pushkarev
+Copyright (c) 2014-2018 Denis Pushkarev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -106,7 +106,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-zone.js@0.8.29
+zone.js@0.8.26
 MIT
 The MIT License
 
