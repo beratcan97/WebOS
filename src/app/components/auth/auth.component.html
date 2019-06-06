@@ -11,9 +11,21 @@
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
         </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" placeholder="Age" formControlName="age">
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="gender" formControlName="gender">
+            <option value="gender">Gender</option>
+            <option value="boy">Boy</option>
+            <option value="girl">Girl</option>
+          </select>
+        </div>
       </form>
-      <button (click)="register()">Register!</button>
-      <p (click)="newUser = false">Already registered</p>
+      <button type="button" class="btn btn-primary" (click)="register()">Register</button>
+      <button type="button" class="btn btn-secondary ml-3" (click)="newUser = false">Already register</button>
     </ng-container>
 
     <ng-template #signInFormTemplate>
@@ -28,8 +40,8 @@
             formControlName="password">
         </div>
       </form>
-      <button (click)="signIn()">Sign in</button>
-      <p (click)="newUser = true">Register</p>
+      <button type="button" class="btn btn-primary" (click)="signIn()">Sign in</button>
+      <button type="button" class="btn btn-secondary ml-3" (click)="newUser = true">Register</button>
     </ng-template>
   </div>
 </div>
