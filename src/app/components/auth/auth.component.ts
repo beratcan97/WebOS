@@ -40,6 +40,7 @@ export class AuthComponent implements OnInit {
       id: '',
       userCreated: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
       lastSignedIn: '',
+      cash: '',
     });
 
     this.signInForm = this.fb.group({
@@ -67,6 +68,7 @@ export class AuthComponent implements OnInit {
             id: tmp,
             userCreated: this.DATA[0].userCreated,
             lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
+            cash: '',
           }
           localStorage.setItem('user', JSON.stringify(user));
           this.service.updateUser(user)
