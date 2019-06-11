@@ -33,14 +33,14 @@ export class AuthComponent implements OnInit {
     this.registerForm = this.fb.group({
       username: '',
       password: '',
-      age: '',
+      birthdate: '',
       gender: '',
       wallpaper: '',
       auth: '',
       id: '',
       userCreated: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
       lastSignedIn: '',
-      cash: '',
+      cash: '0',
     });
 
     this.signInForm = this.fb.group({
@@ -61,14 +61,14 @@ export class AuthComponent implements OnInit {
           let user = {
             username: this.DATA[0].username,
             password: this.DATA[0].password,
-            age: this.DATA[0].age,
+            birthdate: this.DATA[0].birthdate,
             gender: this.DATA[0].gender,
             wallpaper: this.DATA[0].wallpaper,
             auth: 'true',
             id: tmp,
             userCreated: this.DATA[0].userCreated,
             lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
-            cash: '',
+            cash: this.DATA[0].cash,
           }
           localStorage.setItem('user', JSON.stringify(user));
           this.service.updateUser(user)

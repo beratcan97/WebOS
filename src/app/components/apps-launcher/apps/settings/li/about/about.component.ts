@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  lang = window.navigator.language;
+  user = JSON.parse(localStorage.getItem('user'));
 
   DATA;
 
