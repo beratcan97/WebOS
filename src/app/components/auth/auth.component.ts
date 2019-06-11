@@ -36,8 +36,10 @@ export class AuthComponent implements OnInit {
       age: '',
       gender: '',
       wallpaper: '',
+      auth: '',
+      id: '',
       userCreated: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
-      lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
+      lastSignedIn: '',
     });
 
     this.signInForm = this.fb.group({
@@ -56,18 +58,26 @@ export class AuthComponent implements OnInit {
       if (this.DATA.length) {
         if (this.DATA[0].password == this.signInForm.value.password && this.DATA[0].username == this.signInForm.value.name) {
           let user = {
-            username: this.signInForm.value.name,
-            password: this.signInForm.value.password,
-            age: this.signInForm.value.age,
-            gender: this.signInForm.value.gender,
+            username: this.DATA[0].username,
+            password: this.DATA[0].password,
+            age: this.DATA[0].age,
+            gender: this.DATA[0].gender,
             wallpaper: this.DATA[0].wallpaper,
             auth: 'true',
             id: tmp,
-            userCreated: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
+            userCreated: this.DATA[0].userCreated,
             lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
           }
           localStorage.setItem('user', JSON.stringify(user));
-          this.router.navigate(['']);
+          this.service.updateUser(user)
+          .then(
+            res => {
+              this.router.navigate(['']);
+            }
+          ),
+          err => {
+            console.log(err);
+          }
         } else {
           alert('Wrong username');
         }
