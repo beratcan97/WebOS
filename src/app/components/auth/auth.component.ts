@@ -53,22 +53,24 @@ export class AuthComponent implements OnInit {
         tmp = item.payload.doc.id;
         return item.payload.doc.data()
       });
-      console.log(this.DATA);
-      if (this.DATA[0].password == this.signInForm.value.password) {
-
-        let user = {
-          username: this.signInForm.value.name,
-          password: this.signInForm.value.password,
-          age: this.signInForm.value.age,
-          gender: this.signInForm.value.gender,
-          wallpaper: this.DATA[0].wallpaper,
-          auth: 'true',
-          id: tmp,
-          userCreated: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
-          lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
+      if (this.DATA.length) {
+        if (this.DATA[0].password == this.signInForm.value.password && this.DATA[0].username == this.signInForm.value.name) {
+          let user = {
+            username: this.signInForm.value.name,
+            password: this.signInForm.value.password,
+            age: this.signInForm.value.age,
+            gender: this.signInForm.value.gender,
+            wallpaper: this.DATA[0].wallpaper,
+            auth: 'true',
+            id: tmp,
+            userCreated: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
+            lastSignedIn: this.dateDATA.getFullYear() + '-' + (this.dateDATA.getMonth() + 1) + '-' + this.dateDATA.getDate(),
+          }
+          localStorage.setItem('user', JSON.stringify(user));
+          this.router.navigate(['']);
+        } else {
+          alert('Wrong username');
         }
-        localStorage.setItem('user', JSON.stringify(user));
-        this.router.navigate(['']);
       } else {
         alert('Wrong password');
       }
