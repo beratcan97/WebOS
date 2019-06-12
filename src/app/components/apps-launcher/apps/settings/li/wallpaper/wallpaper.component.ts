@@ -39,4 +39,8 @@ export class WallpaperComponent implements OnInit {
         console.log(err);
       }
   }
+
+  navigate(route): void {
+    this.router.navigate([route]);
+  }
 }

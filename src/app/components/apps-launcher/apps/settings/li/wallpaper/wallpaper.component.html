@@ -3,6 +3,7 @@
 
   <div class="homeScreenContainer maxDesktop">
     <div>
+      <li class="iosStyleListItem" (click)="navigate('settings')"><i class="fas fa-chevron-left"></i>Back</li>
       <ng-container *ngFor="let color of colors">
         <li class="iosStyleListItem" id="{{color}}id" (click)="onSubmit(color)">{{color}}</li>
       </ng-container>

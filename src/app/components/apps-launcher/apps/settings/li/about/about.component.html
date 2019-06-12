@@ -3,12 +3,17 @@
 
   <div class="homeScreenContainer maxDesktop">
     <li class="iosStyleListItem d-flex justify-content-between">
+      <p (click)="navigate('settings')"><i class="fas fa-chevron-left"></i>Back</p>
+      <P></P>
+    </li>
+    
+    <li class="iosStyleListItem d-flex justify-content-between">
       <p>Version</p>
       <P>AuthFix</P>
     </li>
 
     <li class="iosStyleListItem d-flex justify-content-between">
-      <p>UserName</p>
+      <p>User name</p>
       <P>{{user.username}}</P>
     </li>
 
