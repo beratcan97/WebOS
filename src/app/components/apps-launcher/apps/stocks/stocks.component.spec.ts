@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { StocksComponent } from './stocks.component';
+import { AppsLauncherComponent } from '../../apps-launcher.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('StocksComponent', () => {
   let component: StocksComponent;
@@ -8,7 +11,15 @@ describe('StocksComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StocksComponent ]
+      declarations: [
+        StocksComponent,
+        AppsLauncherComponent
+      ],
+      imports: [
+        ReactiveFormsModule,
+        HttpClientModule,
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));

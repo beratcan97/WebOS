@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NotesComponent } from './notes.component';
+import { AppsLauncherComponent } from '../../apps-launcher.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('NotesComponent', () => {
   let component: NotesComponent;
@@ -8,7 +10,14 @@ describe('NotesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotesComponent ]
+      declarations: [
+        NotesComponent,
+        AppsLauncherComponent
+      ],
+      imports: [
+        ReactiveFormsModule,
+        RouterTestingModule
+    ]
     })
     .compileComponents();
   }));

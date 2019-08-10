@@ -1,14 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CpmComponent } from './cpm.component';
+import { AppsLauncherComponent } from '../../apps-launcher.component';
 
-describe('CpmComponent', () => {
+xdescribe('CpmComponent', () => {
   let component: CpmComponent;
   let fixture: ComponentFixture<CpmComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CpmComponent ]
+      declarations: [
+        CpmComponent,
+        AppsLauncherComponent
+      ]
     })
     .compileComponents();
   }));

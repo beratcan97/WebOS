@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CounterComponent } from './counter.component';
+import { AppsLauncherComponent } from '../../apps-launcher.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CounterComponent', () => {
   let component: CounterComponent;
@@ -8,7 +9,13 @@ describe('CounterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CounterComponent ]
+      declarations: [
+        CounterComponent,
+        AppsLauncherComponent
+      ],
+      imports: [
+        RouterTestingModule,
+      ]
     })
     .compileComponents();
   }));

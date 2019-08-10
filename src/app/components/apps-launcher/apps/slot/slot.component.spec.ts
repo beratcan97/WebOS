@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SlotComponent } from './slot.component';
+import { AppsLauncherComponent } from '../../apps-launcher.component';
 
 describe('SlotComponent', () => {
   let component: SlotComponent;
@@ -8,7 +8,10 @@ describe('SlotComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SlotComponent ]
+      declarations: [
+        SlotComponent,
+        AppsLauncherComponent
+      ]
     })
     .compileComponents();
   }));

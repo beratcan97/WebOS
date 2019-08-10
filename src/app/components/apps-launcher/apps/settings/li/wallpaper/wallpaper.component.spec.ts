@@ -1,14 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WallpaperComponent } from './wallpaper.component';
+import { AppsLauncherComponent } from '../../../../apps-launcher.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
-describe('WallpaperComponent', () => {
+xdescribe('WallpaperComponent', () => {
   let component: WallpaperComponent;
   let fixture: ComponentFixture<WallpaperComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WallpaperComponent ]
+      declarations: [
+        WallpaperComponent,
+        AppsLauncherComponent
+      ],
+      imports: [
+        RouterTestingModule,
+      ]
     })
     .compileComponents();
   }));

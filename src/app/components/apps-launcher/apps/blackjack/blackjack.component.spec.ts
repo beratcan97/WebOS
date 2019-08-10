@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BlackjackComponent } from './blackjack.component';
+import { AppsLauncherComponent } from '../../apps-launcher.component';
 
 describe('BlackjackComponent', () => {
   let component: BlackjackComponent;
@@ -8,7 +8,7 @@ describe('BlackjackComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlackjackComponent ]
+      declarations: [ BlackjackComponent, AppsLauncherComponent ],
     })
     .compileComponents();
   }));

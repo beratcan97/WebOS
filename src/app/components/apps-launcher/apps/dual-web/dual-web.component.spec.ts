@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DualWebComponent } from './dual-web.component';
+import { AppsLauncherComponent } from '../../apps-launcher.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('DualWebComponent', () => {
   let component: DualWebComponent;
@@ -8,7 +9,13 @@ describe('DualWebComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DualWebComponent ]
+      declarations: [
+        DualWebComponent,
+        AppsLauncherComponent
+      ],
+      imports: [
+        RouterTestingModule,
+      ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CardGeneratorComponent } from './card-generator.component';
+import { AppsLauncherComponent } from '../../apps-launcher.component';
 
 describe('CardGeneratorComponent', () => {
   let component: CardGeneratorComponent;
@@ -8,7 +8,7 @@ describe('CardGeneratorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardGeneratorComponent ]
+      declarations: [ CardGeneratorComponent, AppsLauncherComponent ]
     })
     .compileComponents();
   }));
