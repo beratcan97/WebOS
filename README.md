@@ -1,18 +1,6 @@
 # WebOS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
-
-## TODO
-> Detect if pwa is installed or not
-
-> bootstrap cards
-
-> routing animations
-
-ng build --prod --output-path docs --base-href WebOS
-
-
-
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
 ## Development server
 
